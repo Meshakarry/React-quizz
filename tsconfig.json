@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "es5", // Specifies the ECMAScript target version for output JavaScript.
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ], // Specifies a list of bundled library declaration files to be included in the compilation.
+    "allowJs": true, // Allows JavaScript files to be compiled alongside TypeScript files.
+    "skipLibCheck": true, // Skips type checking of declaration files.
+    "esModuleInterop": true, // Enables a workaround for CommonJS/ES module interoperability.
+    "allowSyntheticDefaultImports": true, // Allows default imports from modules with no default export.
+    "strict": true, // Enables all strict type-checking options.
+    "forceConsistentCasingInFileNames": true, // Disallows inconsistent casing in file names.
+    "noFallthroughCasesInSwitch": true, // Reports errors for fallthrough cases in switch statements.
+    "module": "esnext", // Specifies the module code generation.
+    "moduleResolution": "node", // Specifies how modules are resolved.
+    "resolveJsonModule": true, // Allows importing .json files.
+    "isolatedModules": true, // Ensures that each file can be safely transpiled without relying on other files.
+    "noEmit": true, // Disables emitting output files. Useful when using a bundler like Webpack.
+    "jsx": "react-jsx" // Specifies the JSX emit mode for React.
+  },
+  "include": [
+    "src" // Specifies an array of glob patterns or file paths to include in the program.
+  ],
+  "exclude": [
+    "node_modules" // Specifies an array of glob patterns or file paths to exclude from the program.
+  ]
+}
