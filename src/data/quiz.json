@@ -1,98 +1,83 @@
-{
-  "themes": [
-    {
-      "id": 0,
-      "color": "#FFFFFF"
-    },
-    {
-      "id": 1,
-      "color": "#ECF0F9"
-    },
-    {
-      "id": 2,
-      "color": "#F9ECF2"
-    },
-    {
-      "id": 3,
-      "color": "#E1ECD3"
-    },
-    {
-      "id": 4,
-      "color": "#FED6D6"
-    }
-  ],
-  "screens": [
-    {
-      "id": 1,
-      "title": "accommodation",
-      "color": "#5181FC",
-      "text": "Select accommodation",
-      "logo": "accommodations.svg",
-      "items": [
-        {
-          "image": "accommodation-scenic.jpeg",
-          "price": 700,
-          "title": "Scenic view"
-        },
-        {
-          "image": "accommodation-quaint.jpeg",
-          "price": 550,
-          "title": "Quaint"
-        },
-        {
-          "image": "accommodation-cheap.jpeg",
-          "price": 350,
-          "title": "Cheap accommodation"
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "title": "transport",
-      "color": "#D73780",
-      "text": "Select transport",
-      "logo": "transport.svg",
-      "items": [
-        {
-          "image": "transport-luxury.jpeg",
-          "price": 600,
-          "title": "Luxury"
-        },
-        {
-          "image": "transport-public.jpeg",
-          "price": 450,
-          "title": "Public transport"
-        },
-        {
-          "image": "transport-cheap.jpeg",
-          "price": 250,
-          "title": "Cheap transport"
-        }
-      ]
-    },
-    {
-      "id": 3,
-      "title": "food",
-      "color": "#61AB04",
-      "text": "Select food",
-      "logo": "food.svg",
-      "items": [
-        {
-          "image": "food-gourmet.jpeg",
-          "price": 500,
-          "title": "Gourmet cuisine"
-        },
-        {
-          "image": "food-traditional.jpeg",
-          "price": 400,
-          "title": "Traditional"
-        },
-        {
-          "image": "food-cheap.jpeg",
-          "price": 300,
-          "title": "Cheap food"
-        }
-      ]
-    }
-  ]
-}
+[
+  {
+    "id": 1,
+    "title": "accommodation",
+    "text": "Select accommodation",
+    "logo": "accommodations.svg",
+    "color": "#5181fc",
+    "items": [
+      {
+        "id": "scenic-view",
+        "image": "accommodation-scenic.jpeg",
+        "price": 700,
+        "title": "Scenic view"
+      },
+      {
+        "id": "quaint",
+        "image": "accommodation-quaint.jpeg",
+        "price": 550,
+        "title": "Quaint"
+      },
+      {
+        "id": "cheap-accommodation",
+        "image": "accommodation-cheap.jpeg",
+        "price": 350,
+        "title": "Cheap accommodation"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "transport",
+    "text": "Select transport",
+    "logo": "transport.svg",
+    "color": "#d73780",
+    "items": [
+      {
+        "id": "luxury",
+        "image": "transport-luxury.jpeg",
+        "price": 600,
+        "title": "Luxury"
+      },
+      {
+        "id": "public-transport",
+        "image": "transport-public.jpeg",
+        "price": 450,
+        "title": "Public transport"
+      },
+      {
+        "id": "cheap-transport",
+        "image": "transport-cheap.jpeg",
+        "price": 250,
+        "title": "Cheap transport"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "food",
+    "text": "Select food",
+    "logo": "food.svg",
+    "color": "#61ab04",
+    "items": [
+      {
+        "id": "gourmet-cuisine",
+        "image": "food-gourmet.jpeg",
+        "price": 500,
+        "title": "Gourmet cuisine"
+      },
+      {
+        "id": "traditional",
+        "image": "food-traditional.jpeg",
+        "price": 400,
+        "title": "Traditional"
+      },
+      {
+        "id": "cheap-food",
+        "image": "food-cheap.jpeg",
+        "price": 300,
+        "title": "Cheap food"
+      }
+    ]
+  }
+]

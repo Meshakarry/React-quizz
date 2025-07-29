@@ -25,5 +25,8 @@
   ],
   "exclude": [
     "node_modules" // Specifies an array of glob patterns or file paths to exclude from the program.
-  ]
+  ],
+  "paths": {
+    "@/*": ["./src/*"]
+  }
 }
