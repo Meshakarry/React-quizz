@@ -11,12 +11,12 @@ interface QuizInfoProps {
 }
 
 export default function QuizInfo ({ onChangeHandler }: QuizInfoProps) {
-  const { selectedItems, data } = useQuizStore();
+  const { selectedItems, steps } = useQuizStore();
 
   return (
      <div className="bg-white rounded-[20px] pl-8 pr-6 flex flex-col min-h-[400px] mx-auto md:max-w-[720px]">
             <Accordion>
-              { data.map((screen, index) =>
+              { steps.map((screen, index) =>
                 <AccordionItem id={screen.title} key={index}>
                   <AccordionTrigger>
                     <div className="py-5">
@@ -30,7 +30,7 @@ export default function QuizInfo ({ onChangeHandler }: QuizInfoProps) {
 
                   <AccordionContent>
                     <div className="flex items-center justify-between gap-2 pb-6 pt-1 text-2xl leading-tight font-bold">
-                      <span>${ selectedItems[index].price }</span>
+                      <span>${ Object.values(selectedItems)[index]?.price }</span>
                       <button onClick={() => onChangeHandler(index)}>Change ?</button>
                     </div>
                   </AccordionContent>

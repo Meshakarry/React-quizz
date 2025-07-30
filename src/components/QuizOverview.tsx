@@ -6,15 +6,18 @@ import { QuizSpenderTypeBadge } from './QuizSpenderTypeBadge';
 import QuizInfo from './QuizInfo';
 
 export default function QuizOverview () {
-  const { selectedItems, finishQuiz, setStep, toggleIsEdit } = useQuizStore();
+  const { steps, selectedItems, setCurrentStepId, finishQuiz, toggleIsEdit } = useQuizStore();
 
-  const totalPrice = useMemo(() =>
-    selectedItems.reduce((price, item) => price + item.price, 0)
-  , [selectedItems])
+  const totalPrice = useMemo(() => {
+    return Object.values(selectedItems).reduce((price, item) => price + item.price, 0)
+  }, [selectedItems])
 
   function handleUpdateSelectedItem (index: number) {
+    const step = steps[index];
+    if (!step) return;
+
     finishQuiz(false);
-    setStep(index + 1);
+    setCurrentStepId(index + 1);
     toggleIsEdit(true);
   }
 

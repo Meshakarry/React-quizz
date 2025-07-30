@@ -2,10 +2,10 @@ import QuizButton from './QuizButton';
 import { useQuizStore } from '../store/quiz';
 
 export default function QuizWelcome () {
-  const { incrementStep } = useQuizStore();
+  const { goToNextStep } = useQuizStore();
 
   function startQuiz () {
-    incrementStep()
+    goToNextStep()
   }
 
   return (

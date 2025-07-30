@@ -9,44 +9,64 @@ export interface QuizItem {
   title: string
 }
 
-interface QuizStore {
-  // reading data from json just temporary
-  data: typeof quizData,
-  currentStep: number
-  selectedItems: QuizItem[],
-  quizFinished: boolean
-  isEdit: boolean,
-  incrementStep: () => void,
-  setStep: (step: number) => void,
-  finishQuiz: (finished?: boolean) => void,
-  addSelectedItem: (selectedItem: QuizItem) => void,
-  updateSelectedItem: (selectedItem: QuizItem) => void,
-  toggleIsEdit: (edit?: boolean) => void,
+interface QuizStep {
+  id: number;
+  title: string;
+  logo: string;
+  text: string;
+  color: string;
+  items: QuizItem[];
 }
 
-export const useQuizStore = create<QuizStore>((set) => ({
-  currentStep: 0,
+interface QuizStore {
+  // reading data from json just temporary
+  steps: QuizStep[];
+  currentStepId: number;
+  selectedItems: Record<number, QuizItem>;
+  quizFinished: boolean
+  isEdit: boolean,
+  // methods
+  finishQuiz: (finished?: boolean) => void,
+  updateSelectedItem: (selectedItem: QuizItem | undefined) => void,
+  toggleIsEdit: (edit?: boolean) => void,
+  goToNextStep: () => void,
+  setCurrentStepId: (id: number) => void,
+}
+
+export const useQuizStore = create<QuizStore>((set, get) => ({
+  steps: quizData,
+  currentStepId: 0,
   data: quizData,
-  selectedItems: [],
+  selectedItems: {}, // mapped selected items instead of array
   quizFinished: false,
   isEdit: false,
-  incrementStep: () => set((state) => ({
-    currentStep: state.currentStep + 1,
+  finishQuiz: (finished = true) => set(() => ({
+    quizFinished: finished
   })),
-  setStep: (step) => set(() => ({
-    currentStep: step,
-  })),
-  finishQuiz: (finished = true) => set(() => ({ quizFinished: finished })),
-  addSelectedItem: (selectedItem) => set((state) => ({
-    selectedItems: [...state.selectedItems, selectedItem]
-  })),
-  updateSelectedItem: (selectedItem) => set((state) => {
-    const updated = [...state.selectedItems];
-    updated[state.currentStep - 1] = selectedItem;
-    return { selectedItems: updated };
+  updateSelectedItem: (selectedItem) =>
+    set((state) => {
+      if (selectedItem) {
+        return {
+          selectedItems: {
+            ...state.selectedItems,
+              [state.currentStepId]: selectedItem
+          }
+        }
+      }
+
+      return state;
   }),
-  // TO DO: consider moving this from this store, it is not kinda related to the quiz logic
+  setCurrentStepId: (id: number) => set(() => ({ currentStepId: id })),
+  goToNextStep: () => set((state) => {
+    const currentIndex = state.steps.findIndex(s => s.id === state.currentStepId);
+    const nextStep = state.isEdit ? null : state.steps[currentIndex + 1];
+    return {
+      currentStepId: nextStep?.id,
+      quizFinished: !nextStep,
+      isEdit: state.isEdit,
+    };
+  }),
   toggleIsEdit: (edit) => set((state) => ({
     isEdit: edit ?? !state.isEdit
-  }))
+  })),
 }))

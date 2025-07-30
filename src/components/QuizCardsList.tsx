@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 
 import { useQuizStore, QuizItem } from '../store/quiz';
 
@@ -8,34 +8,27 @@ import QuizCard from './QuizCard';
 
 export default function QuizCardsList() {
   const {
-    data,
-    currentStep,
+    steps,
+    currentStepId,
     selectedItems,
-    isEdit,
-    setStep,
-    incrementStep,
-    finishQuiz,
-    addSelectedItem,
-    updateSelectedItem
+    goToNextStep,
+    updateSelectedItem,
   } = useQuizStore();
+
+  const currentStep = useMemo(() => {
+    return steps.find(step => step.id === currentStepId);
+  }, [steps, currentStepId]);
+
+  const selectedItemForStep = selectedItems[currentStepId];
   const [selectedCardId, setSelectedCardId] = useState('');
 
-  function handleButtonClick () {
-    const selectedItem = data[currentStep - 1].items.find(item => item.id === selectedCardId);
+  function handleButtonClick() {
+    if (!currentStep) return;
+    const selectedItem = currentStep.items.find(item => item.id === selectedCardId);
+    if (!selectedItem) return;
 
-    if (isEdit && selectedItem) {
-      updateSelectedItem(selectedItem);
-    }
-
-    if (selectedItem && !isEdit) {
-      addSelectedItem(selectedItem);
-      incrementStep();
-    }
-
-    if (currentStep >= data.length || isEdit) {
-      finishQuiz();
-      setStep(data.length + 1)
-    }
+    updateSelectedItem(selectedItem);
+    goToNextStep();
   }
 
   function handleCardSelect (card: QuizItem) {
@@ -43,25 +36,29 @@ export default function QuizCardsList() {
   }
 
   useEffect(() => {
-    document.body.style.setProperty('--current-step-color', `${data[currentStep - 1].color}`)
-  }, [currentStep, data])
+    document.body.style.setProperty('--current-step-color', `${currentStep?.color}`)
+  }, [currentStep])
 
   useEffect(() => {
-    setSelectedCardId(selectedItems[currentStep - 1]?.id ?? '');
-  }, [currentStep, selectedItems])
+    setSelectedCardId(selectedItemForStep?.id ?? '');
+  }, [selectedItemForStep])
+
+  if (!currentStep) {
+    return null;
+  }
 
   return (
     <div>
       <QuizTitle
-        title={data[currentStep - 1].title}
-        icon={data[currentStep - 1].logo}
+        title={currentStep.title}
+        icon={currentStep.logo}
       />
       <div className="grid grid-cols-1 gap-9 sm:grid-cols-2 lg:grid-cols-3">
         {
-          data[currentStep - 1].items.map((card, index) =>
+          currentStep.items.map((card) =>
             <QuizCard
               card={card}
-              key={index}
+              key={card.id}
               selected={card.id === selectedCardId}
               onSelectCard={handleCardSelect}
             />
@@ -70,9 +67,9 @@ export default function QuizCardsList() {
       </div>
 
       <QuizButton
-        text={data[currentStep - 1].text}
+        text={currentStep.text}
         disabled={!selectedCardId}
-        stepper={`${currentStep}/${data.length}`}
+        stepper={`${currentStep.id}/${steps.length}`}
         nextStep={handleButtonClick}
       />
     </div>
