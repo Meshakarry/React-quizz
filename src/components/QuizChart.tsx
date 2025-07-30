@@ -1,7 +1,7 @@
 
 import { useMemo } from 'react';
-
 import { PieChart } from 'react-minimal-pie-chart';
+
 import { useQuizStore } from '../store/quiz';
 
 interface QuizChartProps {

@@ -8,6 +8,12 @@ enum SPENDER_TYPES {
   BIG_SPENDER = 'Big spender'
 }
 
+export const DisplaySpenderTypeColors: Record<SPENDER_TYPES, string> = {
+  [SPENDER_TYPES.THRIFTY]: '#46d0d9',
+  [SPENDER_TYPES.NORMAL]: '#46d9b5',
+  [SPENDER_TYPES.BIG_SPENDER]: '#d946a7',
+}
+
 interface QuizSpenderTypeBadgeProps {
   totalPrice: number
 }
@@ -28,7 +34,10 @@ export function QuizSpenderTypeBadge ({ totalPrice } : QuizSpenderTypeBadgeProps
   const spenderType = calculateSpenderType(totalPrice)
 
   return (
-    <div className="max-w-fit mx-auto text-center mb-7 rounded-[10px] pl-2.5 pr-2 py-1 bg-white font-bold text-base leading-tight">
+    <div
+      style={{'--spender-type-bg': DisplaySpenderTypeColors[spenderType]} as React.CSSProperties}
+      className="max-w-fit mx-auto text-center mb-7 rounded-[10px] pl-2.5 pr-2 py-1 bg-[var(--spender-type-bg)] font-bold text-base leading-tight"
+    >
       { spenderType }
     </div>
   )

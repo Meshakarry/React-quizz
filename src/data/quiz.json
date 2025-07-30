@@ -10,19 +10,22 @@
         "id": "scenic-view",
         "image": "accommodation-scenic.jpeg",
         "price": 700,
-        "title": "Scenic view"
+        "title": "Scenic view",
+        "location": "Vesela b.b"
       },
       {
         "id": "quaint",
         "image": "accommodation-quaint.jpeg",
         "price": 550,
-        "title": "Quaint"
+        "title": "Quaint",
+        "location": "Turbe"
       },
       {
         "id": "cheap-accommodation",
         "image": "accommodation-cheap.jpeg",
         "price": 350,
-        "title": "Cheap accommodation"
+        "title": "Cheap accommodation",
+        "location": "Sultan ahmedova br.29"
       }
     ]
   },

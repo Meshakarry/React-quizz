@@ -1,4 +1,7 @@
 import { QuizItem } from '../store/quiz'
+import LocationIcon from './Icons/Location'
+import QuizCardDetails from './QuizCardDetails'
+import QuizCardSelectedOverlay from './QuizCardSelectedOverlay'
 
 interface QuizCardProps {
   card: QuizItem
@@ -15,35 +18,25 @@ export default function QuizCard ({ card, selected, onSelectCard } : QuizCardPro
         alt={card.title}
       />
 
-      <div
-        className={
-          `
-           absolute z-[2] -bottom-1 left-0 w-full rounded-[20px] py-8 px-4 bg-white flex items-center justify-between text-base leading-tight
-           ${selected ? 'text-[var(--current-step-color)]' : 'text-black'}
-          `
-        }
-      >
-        <span>{ card.title }</span>
-        <span>${ card.price }</span>
-      </div>
-
       {
-        selected && (
-          <div className="absolute rounded-[20px] inset-0 bg-black/70 flex items-center justify-center">
-            <div className="absolute top-1/4 bg-[var(--current-step-color)] w-14 h-14 rounded-full p-3 flex items-center justify-center">
-              {/* TO DO: fix icon loading */}
-              <img
-                src={require('../assets/svg/check.svg').default}
-                alt="Check icon"
-                width={44}
-                height={44}
-                className="object-cover"
-              />
-            </div>
-          </div>
+        card?.location && (
+          <span className="absolute left-6 top-7 whitespace-nowrap bg-white/65 backdrop-blur-[20px] z-[1] rounded-[50px] px-4 py-1.5 flex items-center justify-center gap-1 text-[#143656] text-xs leading-none tracking-tight">
+            <LocationIcon className="min-w-3.5" />
+            { card.location }
+          </span>
         )
       }
 
+      {
+        selected && (
+          <QuizCardSelectedOverlay />
+        )
+      }
+
+      <QuizCardDetails
+        card={card}
+        selected={selected}
+      />
 
       <button
         className="absolute inset-0 -bottom-1 z-10"

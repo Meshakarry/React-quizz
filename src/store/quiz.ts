@@ -7,6 +7,7 @@ export interface QuizItem {
   image: string
   price: number
   title: string
+  location?: string
 }
 
 interface QuizStep {

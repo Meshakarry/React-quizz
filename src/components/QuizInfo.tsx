@@ -1,5 +1,7 @@
 import { useQuizStore } from '../store/quiz';
 
+import { formatPrice } from '../helpers/formatPrice'
+
 import QuizTitle from './QuizTitle';
 import Accordion from './Accordion/Accordion';
 import AccordionItem from './Accordion/AccordionItem';
@@ -30,7 +32,7 @@ export default function QuizInfo ({ onChangeHandler }: QuizInfoProps) {
 
                   <AccordionContent>
                     <div className="flex items-center justify-between gap-2 pb-6 pt-1 text-2xl leading-tight font-bold">
-                      <span>${ Object.values(selectedItems)[index]?.price }</span>
+                      <span>{ formatPrice(Object.values(selectedItems)[index]?.price) }</span>
                       <button onClick={() => onChangeHandler(index)}>Change ?</button>
                     </div>
                   </AccordionContent>
