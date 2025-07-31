@@ -1,22 +1,32 @@
 [
   {
-    "id": 0,
-    "color": "#fff"
-  },
-  {
-    "id": 1,
+    "stepId": "accommodation",
     "color": "#ecf0f9"
   },
   {
-    "id": 2,
+    "stepId": "transport",
     "color": "#f9ecf2"
   },
   {
-    "id": 3,
+    "stepId": "food",
     "color": "#e1ecd3"
   },
   {
-    "id": 4,
-    "color": "#fed6d6"
+    "stepId": "gender",
+    "color": "#eff5fb"
+  },
+  {
+    "stepId": "fashion",
+    "gender": "male",
+    "color": "rgba(106, 192, 240, 0.39)"
+  },
+  {
+    "stepId": "fashion",
+    "gender": "female",
+    "color": "#f4effb"
+  },
+  {
+    "stepId": "overview",
+    "color": "#c6d9f3"
   }
 ]

@@ -18,7 +18,7 @@ export default function QuizCardDetails ({ card, selected }: QuizCardDetailsProp
       }
     >
       <span>{ card.title }</span>
-      <span>{ formatPrice(card.price) }</span>
+      { card?.price && <span>{ formatPrice(card?.price) }</span> }
     </div>
   )
 }

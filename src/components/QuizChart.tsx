@@ -2,25 +2,27 @@
 import { useMemo } from 'react';
 import { PieChart } from 'react-minimal-pie-chart';
 
-import { useQuizStore } from '../store/quiz';
+import { useQuizStore, QuizSingleStep, GenderStep, GenderBasedStep } from '../store/quiz';
+
 
 interface QuizChartProps {
+  allSteps: (QuizSingleStep | GenderBasedStep | GenderStep)[]
   totalPrice: number
 }
 
-export default function QuizChart({ totalPrice }: QuizChartProps) {
-  const { selectedItems, steps } = useQuizStore();
+export default function QuizChart({ totalPrice, allSteps }: QuizChartProps) {
+  const { selectedItems } = useQuizStore();
 
   const pricesPercentages = useMemo(() =>
     Object.values(selectedItems).map(item => Math.round((item.price * 100) / totalPrice))
   , [selectedItems, totalPrice])
 
   const chartData = useMemo(() => {
-    return steps.map((screen, index) => ({
-      color: screen.color,
-      value: Object.values(selectedItems)[index]?.price
-    }))
-  }, [steps, selectedItems])
+    return allSteps.map((step, index) => ({
+        color: step.color ?? '',
+        value: Object.values(selectedItems)[index]?.price ?? 0,
+    }));
+  }, [allSteps, selectedItems]);
 
   return (
     <div className="bg-white mx-auto rounded-[20px] pl-12 pr-14 py-7 gap-4 mb-9 flex justify-around items-center md:max-w-[720px]">
@@ -31,13 +33,13 @@ export default function QuizChart({ totalPrice }: QuizChartProps) {
         </div>
 
         <ul className="flex flex-col justify-center gap-2.5">
-          { steps.map((screen, index) =>
+          { allSteps.map((step, index) =>
             <li key={index}>
               <span
                  className="w-4 h-4 mr-2 inline-block bg-[var(--legend-bg-color)]"
-                 style={{'--legend-bg-color': `${screen.color}`} as React.CSSProperties}
+                 style={{'--legend-bg-color': `${step.color}`} as React.CSSProperties}
               />
-              <span>{ pricesPercentages[index] }% { screen.title }</span>
+              <span>{ pricesPercentages[index] }% { step.title }</span>
             </li>
           )}
         </ul>

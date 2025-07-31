@@ -1,86 +1,283 @@
-[
-  {
-    "id": 1,
-    "title": "accommodation",
-    "text": "Select accommodation",
-    "logo": "accommodations.svg",
-    "color": "#5181fc",
-    "items": [
+{
+  "mainSteps": [
+    {
+      "id": 1,
+      "title": "accommodation",
+      "text": "Select accommodation",
+      "logo": "accommodations.svg",
+      "color": "#5181fc",
+      "items": [
+        {
+          "id": "scenic-view",
+          "image": "accommodation-scenic.jpeg",
+          "price": 700,
+          "title": "Scenic view",
+          "location": "Vesela city"
+        },
+        {
+          "id": "quaint",
+          "image": "accommodation-quaint.jpeg",
+          "price": 550,
+          "title": "Quaint",
+          "location": "Turbe b.b"
+        },
+        {
+          "id": "cheap-accommodation",
+          "image": "accommodation-cheap.jpeg",
+          "price": 350,
+          "title": "Cheap accommodation",
+          "location": "Sultan ahmedova 29."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "transport",
+      "text": "Select transport",
+      "logo": "transport.svg",
+      "color": "#d73780",
+      "items": [
+        {
+          "id": "luxury",
+          "image": "transport-luxury.jpeg",
+          "price": 600,
+          "title": "Luxury"
+        },
+        {
+          "id": "public-transport",
+          "image": "transport-public.jpeg",
+          "price": 450,
+          "title": "Public transport"
+        },
+        {
+          "id": "cheap-transport",
+          "image": "transport-cheap.jpeg",
+          "price": 250,
+          "title": "Cheap transport"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "food",
+      "text": "Select food",
+      "logo": "food.svg",
+      "color": "#61ab04",
+      "items": [
+        {
+          "id": "gourmet-cuisine",
+          "image": "food-gourmet.jpeg",
+          "price": 500,
+          "title": "Gourmet cuisine"
+        },
+        {
+          "id": "traditional",
+          "image": "food-traditional.jpeg",
+          "price": 400,
+          "title": "Traditional"
+        },
+        {
+          "id": "cheap-food",
+          "image": "food-cheap.jpeg",
+          "price": 300,
+          "title": "Cheap food"
+        }
+      ]
+    }
+  ],
+  "genderStep": {
+    "text": "Please choose your gender to proceed:",
+    "title": "gender",
+    "logo": "fashion.svg",
+    "options": [
       {
-        "id": "scenic-view",
-        "image": "accommodation-scenic.jpeg",
-        "price": 700,
-        "title": "Scenic view",
-        "location": "Vesela b.b"
+        "id": "male",
+        "label": "Male",
+        "image": "male.png",
+        "color": "#5181fc"
       },
       {
-        "id": "quaint",
-        "image": "accommodation-quaint.jpeg",
-        "price": 550,
-        "title": "Quaint",
-        "location": "Turbe"
-      },
-      {
-        "id": "cheap-accommodation",
-        "image": "accommodation-cheap.jpeg",
-        "price": 350,
-        "title": "Cheap accommodation",
-        "location": "Sultan ahmedova br.29"
+        "id": "female",
+        "label": "Female",
+        "image": "female.png",
+        "color": "#c492ef"
       }
     ]
   },
-  {
-    "id": 2,
-    "title": "transport",
-    "text": "Select transport",
-    "logo": "transport.svg",
-    "color": "#d73780",
-    "items": [
-      {
-        "id": "luxury",
-        "image": "transport-luxury.jpeg",
-        "price": 600,
-        "title": "Luxury"
-      },
-      {
-        "id": "public-transport",
-        "image": "transport-public.jpeg",
-        "price": 450,
-        "title": "Public transport"
-      },
-      {
-        "id": "cheap-transport",
-        "image": "transport-cheap.jpeg",
-        "price": 250,
-        "title": "Cheap transport"
+  "genderBasedSteps": [
+    {
+      "id": 4,
+      "title": "fashion",
+      "text": "Select your outfit",
+      "logo": "fashion.svg",
+      "color": "#c492ef",
+      "genderSpecific": {
+        "male": {
+          "sportswear": {
+              "items": [
+                {
+                  "id": "sportwear-1",
+                  "image": "sportwear-1.jpg",
+                  "price": 300,
+                  "title": "Helanke za trening",
+                  "brand": "Nike"
+                },
+                {
+                  "id": "sportwear-2",
+                  "image": "sportwear-2.jpg",
+                  "price": 200,
+                  "title": "Lagana majica",
+                  "brand": "Nike"
+                },
+                {
+                  "id": "sportwear-3",
+                  "image": "sportwear-3.jpg",
+                  "price": 89,
+                  "title": "Patike za basket",
+                  "brand": "Nike"
+                },
+                {
+                  "id": "sportwear-4",
+                  "image": "sportwear-4.jpg",
+                  "price": 200,
+                  "title": "Jordan trenerka",
+                  "brand": "Nike"
+                }
+              ]
+          },
+          "formalwear": {
+              "items": [
+                {
+                  "id": "formalwear-1",
+                  "image": "formalwear-1.jpg",
+                  "price": 880,
+                  "title": "Kosuljica",
+                  "brand": "Nike"
+                },
+                {
+                  "id": "formalwear-2",
+                  "image": "formalwear-2.jpg",
+                  "price": 550,
+                  "title": "Dobre cehla",
+                  "brand": "Nike"
+                },
+                {
+                  "id": "formalwear-3",
+                  "image": "formalwear-3.jpg",
+                  "price": 265,
+                  "title": "Cipele",
+                  "brand": "Nike"
+                }
+              ]
+          },
+          "casual": {
+              "items": [
+                {
+                  "id": "casual-1",
+                  "image": "casual-1.jpg",
+                  "price": 300,
+                  "title": "Polo majica",
+                  "brand": "Samo brendirano"
+                },
+                {
+                  "id": "casual-2",
+                  "image": "casual-2.jpg",
+                  "price": 44,
+                  "title": "Carapcici na tufne",
+                  "brand": "Samo brendirano"
+                },
+                {
+                  "id": "casual-3",
+                  "image": "casual-3.jpg",
+                  "price": 390,
+                  "title": "Cipele i torba",
+                  "brand": "Samo brendirano"
+                }
+              ]
+          }
+        },
+        "female": {
+          "sportswear": {
+              "items": [
+                {
+                  "id": "sportwear-1",
+                  "image": "sportwear-1.jpg",
+                  "price": 300,
+                  "title": "Helanke za trening",
+                  "brand": "Nike"
+                },
+                {
+                  "id": "sportwear-2",
+                  "image": "sportwear-2.jpg",
+                  "price": 200,
+                  "title": "Lagana majica",
+                  "brand": "Nike"
+                },
+                {
+                  "id": "sportwear-3",
+                  "image": "sportwear-3.jpg",
+                  "price": 89,
+                  "title": "Patike za basket",
+                  "brand": "Nike"
+                },
+                {
+                  "id": "sportwear-4",
+                  "image": "sportwear-4.jpg",
+                  "price": 200,
+                  "title": "Jordan trenerka",
+                  "brand": "Nike"
+                }
+              ]
+          },
+          "formalwear": {
+              "items": [
+                {
+                  "id": "formalwear-1",
+                  "image": "formalwear-1.jpg",
+                  "price": 880,
+                  "title": "",
+                  "brand": "Kosuljica"
+                },
+                {
+                  "id": "formalwear-2",
+                  "image": "formalwear-2.jpg",
+                  "price": 550,
+                  "title": "Dobre cehla",
+                  "brand": "Nike"
+                },
+                {
+                  "id": "formalwear-3",
+                  "image": "formalwear-3.jpg",
+                  "price": 265,
+                  "title": "Cipele",
+                  "brand": "Nike"
+                }
+              ]
+          },
+          "casual": {
+              "items": [
+                {
+                  "id": "casual-1",
+                  "image": "casual-1.jpg",
+                  "price": 300,
+                  "title": "Polo majica"
+                },
+                {
+                  "id": "casual-2",
+                  "image": "casual-2.jpg",
+                  "price": 44,
+                  "title": "Carapcici na tufne"
+                },
+                {
+                  "id": "casual-3",
+                  "image": "casual-3.jpg",
+                  "price": 390,
+                  "title": "Cipele i torba"
+                }
+              ]
+          }
+        }
       }
-    ]
-  },
-  {
-    "id": 3,
-    "title": "food",
-    "text": "Select food",
-    "logo": "food.svg",
-    "color": "#61ab04",
-    "items": [
-      {
-        "id": "gourmet-cuisine",
-        "image": "food-gourmet.jpeg",
-        "price": 500,
-        "title": "Gourmet cuisine"
-      },
-      {
-        "id": "traditional",
-        "image": "food-traditional.jpeg",
-        "price": 400,
-        "title": "Traditional"
-      },
-      {
-        "id": "cheap-food",
-        "image": "food-cheap.jpeg",
-        "price": 300,
-        "title": "Cheap food"
-      }
-    ]
-  }
-]
+    }
+  ]
+}

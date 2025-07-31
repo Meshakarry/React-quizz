@@ -2,6 +2,7 @@ import { useCallback } from 'react';
 
 const THRIFTY_SPENDER_THRESHOLD = 1100;
 const NORMAL_SPENDER_THRESHOLD = 1500;
+
 enum SPENDER_TYPES {
   THRIFTY = 'thrifty',
   NORMAL = 'Normal',
