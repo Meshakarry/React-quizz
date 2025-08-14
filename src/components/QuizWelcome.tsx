@@ -23,7 +23,7 @@ export default function QuizWelcome () {
           and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
         </p>
       </div>
-        {/* TO DO: move it to App.tsx and implement remaining logic there, instead of calling */}
+
       <QuizButton text='Start quiz' nextStep={startQuiz} />
     </div>
   )

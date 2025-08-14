@@ -1,5 +1,6 @@
-import { QuizItem } from '../store/quiz'
+import { QuizItem } from '../types/quiz'
 import LocationIcon from './Icons/Location'
+// components
 import QuizCardDetails from './QuizCardDetails'
 import QuizCardSelectedOverlay from './QuizCardSelectedOverlay'
 

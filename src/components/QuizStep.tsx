@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
-import { useQuizStore, QuizItem, QuizSingleStep, GenderStep, GenderBasedStep } from '../store/quiz';
+import { QuizItem, QuizSingleStep, GenderBasedStep, GenderStep } from '../types/quiz';
+import { useQuizStore } from '../store/quiz';
 
+// components
 import QuizTitle from './QuizTitle';
 import QuizButton from './QuizButton';
 import QuizGenderCategoryStep from './QuizGenderCategoryStep'
@@ -11,10 +13,18 @@ interface QuizStepProps {
 }
 
 export default function QuizStep ({ step }: QuizStepProps) {
-  const { selectedItems, currentStepIndex, selectedGender, steps, goToNextStep, getTotalSteps, updateSelectedItem } = useQuizStore();
-  // TO DO: add another state to handle selected category
+  const {
+    selectedItems,
+    currentStepIndex,
+    selectedGender,
+    steps,
+    goToNextStep,
+    getTotalSteps,
+    updateSelectedItem,
+  } = useQuizStore();
   const [selectedCardId, setSelectedCardId] = useState('');
   const totalSteps = getTotalSteps();
+  console.log(Object.values(steps))
 
   function handleButtonClick() {
     if (!step) return;
@@ -29,7 +39,7 @@ export default function QuizStep ({ step }: QuizStepProps) {
     // GENDER-BASED STEP
     else if ('genderSpecific' in step && selectedGender) {
       const categories = step.genderSpecific[selectedGender];
-      const selectedCategory = Object.entries(categories).find(([categoryId]) => categoryId === selectedCardId);
+      const selectedCategory = Object.entries(categories.options).find(([categoryId]) => categoryId === selectedCardId);
 
       if (!selectedCategory) return;
 
@@ -56,11 +66,14 @@ export default function QuizStep ({ step }: QuizStepProps) {
   }
 
   useEffect(() => {
-    document.body.style.setProperty('--current-step-color', `${step?.color}`)
-  }, [step])
+    if (step) {
+      const color = selectedGender && 'genderSpecific' in step ? step?.genderSpecific[selectedGender]?.color : step?.color
+      document.body.style.setProperty('--current-step-color', `${color}`)
+    }
+  }, [step, selectedGender])
 
   useEffect(() => {
-    setSelectedCardId(selectedItems[currentStepIndex - 1]?.id ?? '');
+    setSelectedCardId(selectedItems[currentStepIndex]?.id ?? '');
   }, [selectedItems, currentStepIndex])
 
   if (!step) {
@@ -73,16 +86,16 @@ export default function QuizStep ({ step }: QuizStepProps) {
         title={step.title}
         icon={step.logo}
       />
-          {/* TO DO: fix ts and this condition for gender specific */}
       {
         selectedGender && 'genderSpecific' in step ? (
           <QuizGenderCategoryStep
+            selectedCardId={selectedCardId}
             categories={step.genderSpecific[selectedGender]}
             onSelectCategory={handleCardSelect}
           />
         ) : (
           <QuizMainStep
-            items={steps.mainSteps?.[currentStepIndex - 1]?.items}
+            items={steps.mainSteps?.[currentStepIndex]?.items}
             selectedCardId={selectedCardId}
             onSelectCard={handleCardSelect}
           />

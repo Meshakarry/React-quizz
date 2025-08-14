@@ -1,5 +1,7 @@
 import QuizTitle from './QuizTitle';
-import { Gender, useQuizStore } from '../store/quiz';
+import { Gender } from '../types/quiz';
+import { useQuizStore } from '../store/quiz';
+
 
 // TO DO: Gender type
 interface QuizSelectGenderProps {

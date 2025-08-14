@@ -1,6 +1,7 @@
-import { useQuizStore, QuizSingleStep, GenderStep, GenderBasedStep } from '../store/quiz';
+import { QuizSingleStep, GenderBasedStep, GenderStep } from '../types/quiz';
+import { useQuizStore } from '../store/quiz';
 import { formatPrice } from '../helpers/formatPrice';
-
+// components
 import QuizTitle from './QuizTitle';
 import Accordion from './Accordion/Accordion';
 import AccordionItem from './Accordion/AccordionItem';
@@ -18,13 +19,13 @@ export default function QuizInfo ({ allSteps, onChangeHandler }: QuizInfoProps) 
   return (
      <div className="bg-white rounded-[20px] pl-8 pr-6 flex flex-col min-h-[400px] mx-auto md:max-w-[720px]">
         <Accordion>
-          { allSteps.map((screen, index) =>
-            <AccordionItem id={screen.title} key={index}>
+          { allSteps.map((step, index) =>
+            <AccordionItem id={step.title} key={index}>
               <AccordionTrigger>
                 <div className="py-5">
                   <QuizTitle
-                    icon={screen.logo}
-                    title={screen.title}
+                    icon={step.logo}
+                    title={step.title}
                     hideMarginBottom={true}
                   />
                 </div>
@@ -33,7 +34,7 @@ export default function QuizInfo ({ allSteps, onChangeHandler }: QuizInfoProps) 
               <AccordionContent>
                 <div className="flex items-center justify-between gap-2 pb-6 pt-1 text-2xl leading-tight font-bold">
                   <span>{ formatPrice(Object.values(selectedItems)[index]?.price) }</span>
-                  <button onClick={() => onChangeHandler(index)}>Change ?</button>
+                  <button onClick={() => onChangeHandler(step.id)}>Change ?</button>
                 </div>
               </AccordionContent>
 

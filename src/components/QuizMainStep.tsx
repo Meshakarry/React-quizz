@@ -1,4 +1,4 @@
-import { QuizItem } from '../store/quiz';
+import { QuizItem } from '../types/quiz';
 import QuizCard from './QuizCard';
 
 interface QuizStepProps {

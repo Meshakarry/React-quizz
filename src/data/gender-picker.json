@@ -1,0 +1,19 @@
+{
+  "text": "Please choose your gender to proceed:",
+  "title": "gender",
+  "logo": "fashion.svg",
+  "options": [
+    {
+      "id": "male",
+      "label": "Male",
+      "image": "male.png",
+      "color": "#5181fc"
+    },
+    {
+      "id": "female",
+      "label": "Female",
+      "image": "female.png",
+      "color": "#c492ef"
+    }
+  ]
+}

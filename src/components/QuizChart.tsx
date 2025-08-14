@@ -2,8 +2,8 @@
 import { useMemo } from 'react';
 import { PieChart } from 'react-minimal-pie-chart';
 
-import { useQuizStore, QuizSingleStep, GenderStep, GenderBasedStep } from '../store/quiz';
-
+import { QuizSingleStep, GenderBasedStep, GenderStep } from '../types/quiz';
+import { useQuizStore } from '../store/quiz';
 
 interface QuizChartProps {
   allSteps: (QuizSingleStep | GenderBasedStep | GenderStep)[]

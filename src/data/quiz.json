@@ -1,7 +1,7 @@
 {
   "mainSteps": [
     {
-      "id": 1,
+      "id": 0,
       "title": "accommodation",
       "text": "Select accommodation",
       "logo": "accommodations.svg",
@@ -31,7 +31,7 @@
       ]
     },
     {
-      "id": 2,
+      "id": 1,
       "title": "transport",
       "text": "Select transport",
       "logo": "transport.svg",
@@ -58,7 +58,7 @@
       ]
     },
     {
-      "id": 3,
+      "id": 2,
       "title": "food",
       "text": "Select food",
       "logo": "food.svg",
@@ -86,6 +86,7 @@
     }
   ],
   "genderStep": {
+    "id": 3,
     "text": "Please choose your gender to proceed:",
     "title": "gender",
     "logo": "fashion.svg",
@@ -113,168 +114,174 @@
       "color": "#c492ef",
       "genderSpecific": {
         "male": {
-          "sportswear": {
-              "items": [
-                {
-                  "id": "sportwear-1",
-                  "image": "sportwear-1.jpg",
-                  "price": 300,
-                  "title": "Helanke za trening",
-                  "brand": "Nike"
-                },
-                {
-                  "id": "sportwear-2",
-                  "image": "sportwear-2.jpg",
-                  "price": 200,
-                  "title": "Lagana majica",
-                  "brand": "Nike"
-                },
-                {
-                  "id": "sportwear-3",
-                  "image": "sportwear-3.jpg",
-                  "price": 89,
-                  "title": "Patike za basket",
-                  "brand": "Nike"
-                },
-                {
-                  "id": "sportwear-4",
-                  "image": "sportwear-4.jpg",
-                  "price": 200,
-                  "title": "Jordan trenerka",
-                  "brand": "Nike"
-                }
-              ]
-          },
-          "formalwear": {
-              "items": [
-                {
-                  "id": "formalwear-1",
-                  "image": "formalwear-1.jpg",
-                  "price": 880,
-                  "title": "Kosuljica",
-                  "brand": "Nike"
-                },
-                {
-                  "id": "formalwear-2",
-                  "image": "formalwear-2.jpg",
-                  "price": 550,
-                  "title": "Dobre cehla",
-                  "brand": "Nike"
-                },
-                {
-                  "id": "formalwear-3",
-                  "image": "formalwear-3.jpg",
-                  "price": 265,
-                  "title": "Cipele",
-                  "brand": "Nike"
-                }
-              ]
-          },
-          "casual": {
-              "items": [
-                {
-                  "id": "casual-1",
-                  "image": "casual-1.jpg",
-                  "price": 300,
-                  "title": "Polo majica",
-                  "brand": "Samo brendirano"
-                },
-                {
-                  "id": "casual-2",
-                  "image": "casual-2.jpg",
-                  "price": 44,
-                  "title": "Carapcici na tufne",
-                  "brand": "Samo brendirano"
-                },
-                {
-                  "id": "casual-3",
-                  "image": "casual-3.jpg",
-                  "price": 390,
-                  "title": "Cipele i torba",
-                  "brand": "Samo brendirano"
-                }
-              ]
+          "color": "#C6D9F3",
+          "options": {
+            "sportswear": {
+                "items": [
+                  {
+                    "id": "sportwear-1",
+                    "image": "sportwear-1.jpg",
+                    "price": 300,
+                    "title": "Helanke za trening",
+                    "brand": "Nike"
+                  },
+                  {
+                    "id": "sportwear-2",
+                    "image": "sportwear-2.jpg",
+                    "price": 200,
+                    "title": "Lagana majica",
+                    "brand": "Nike"
+                  },
+                  {
+                    "id": "sportwear-3",
+                    "image": "sportwear-3.jpg",
+                    "price": 89,
+                    "title": "Patike za basket",
+                    "brand": "Nike"
+                  },
+                  {
+                    "id": "sportwear-4",
+                    "image": "sportwear-4.jpg",
+                    "price": 200,
+                    "title": "Jordan trenerka",
+                    "brand": "Nike"
+                  }
+                ]
+            },
+            "formalwear": {
+                "items": [
+                  {
+                    "id": "formalwear-1",
+                    "image": "formalwear-1.jpg",
+                    "price": 880,
+                    "title": "Kosuljica",
+                    "brand": "Nike"
+                  },
+                  {
+                    "id": "formalwear-2",
+                    "image": "formalwear-2.jpg",
+                    "price": 550,
+                    "title": "Dobre cehla",
+                    "brand": "Nike"
+                  },
+                  {
+                    "id": "formalwear-3",
+                    "image": "formalwear-3.jpg",
+                    "price": 265,
+                    "title": "Cipele",
+                    "brand": "Nike"
+                  }
+                ]
+            },
+            "casual": {
+                "items": [
+                  {
+                    "id": "casual-1",
+                    "image": "casual-1.jpg",
+                    "price": 300,
+                    "title": "Polo majica",
+                    "brand": "Samo brendirano"
+                  },
+                  {
+                    "id": "casual-2",
+                    "image": "casual-2.jpg",
+                    "price": 44,
+                    "title": "Carapcici na tufne",
+                    "brand": "Samo brendirano"
+                  },
+                  {
+                    "id": "casual-3",
+                    "image": "casual-3.jpg",
+                    "price": 390,
+                    "title": "Cipele i torba",
+                    "brand": "Samo brendirano"
+                  }
+                ]
+            }
           }
         },
         "female": {
-          "sportswear": {
-              "items": [
-                {
-                  "id": "sportwear-1",
-                  "image": "sportwear-1.jpg",
-                  "price": 300,
-                  "title": "Helanke za trening",
-                  "brand": "Nike"
-                },
-                {
-                  "id": "sportwear-2",
-                  "image": "sportwear-2.jpg",
-                  "price": 200,
-                  "title": "Lagana majica",
-                  "brand": "Nike"
-                },
-                {
-                  "id": "sportwear-3",
-                  "image": "sportwear-3.jpg",
-                  "price": 89,
-                  "title": "Patike za basket",
-                  "brand": "Nike"
-                },
-                {
-                  "id": "sportwear-4",
-                  "image": "sportwear-4.jpg",
-                  "price": 200,
-                  "title": "Jordan trenerka",
-                  "brand": "Nike"
-                }
-              ]
-          },
-          "formalwear": {
-              "items": [
-                {
-                  "id": "formalwear-1",
-                  "image": "formalwear-1.jpg",
-                  "price": 880,
-                  "title": "",
-                  "brand": "Kosuljica"
-                },
-                {
-                  "id": "formalwear-2",
-                  "image": "formalwear-2.jpg",
-                  "price": 550,
-                  "title": "Dobre cehla",
-                  "brand": "Nike"
-                },
-                {
-                  "id": "formalwear-3",
-                  "image": "formalwear-3.jpg",
-                  "price": 265,
-                  "title": "Cipele",
-                  "brand": "Nike"
-                }
-              ]
-          },
-          "casual": {
-              "items": [
-                {
-                  "id": "casual-1",
-                  "image": "casual-1.jpg",
-                  "price": 300,
-                  "title": "Polo majica"
-                },
-                {
-                  "id": "casual-2",
-                  "image": "casual-2.jpg",
-                  "price": 44,
-                  "title": "Carapcici na tufne"
-                },
-                {
-                  "id": "casual-3",
-                  "image": "casual-3.jpg",
-                  "price": 390,
-                  "title": "Cipele i torba"
-                }
-              ]
+          "color": "rgba(245, 221, 253, 0.69)",
+          "options": {
+            "sportswear": {
+                "items": [
+                  {
+                    "id": "sportwear-1",
+                    "image": "sportwear-1.jpg",
+                    "price": 300,
+                    "title": "Helanke za trening",
+                    "brand": "Nike"
+                  },
+                  {
+                    "id": "sportwear-2",
+                    "image": "sportwear-2.jpg",
+                    "price": 200,
+                    "title": "Lagana majica",
+                    "brand": "Nike"
+                  },
+                  {
+                    "id": "sportwear-3",
+                    "image": "sportwear-3.jpg",
+                    "price": 89,
+                    "title": "Patike za basket",
+                    "brand": "Nike"
+                  },
+                  {
+                    "id": "sportwear-4",
+                    "image": "sportwear-4.jpg",
+                    "price": 200,
+                    "title": "Jordan trenerka",
+                    "brand": "Nike"
+                  }
+                ]
+            },
+            "formalwear": {
+                "items": [
+                  {
+                    "id": "formalwear-1",
+                    "image": "formalwear-1.jpg",
+                    "price": 880,
+                    "title": "",
+                    "brand": "Kosuljica"
+                  },
+                  {
+                    "id": "formalwear-2",
+                    "image": "formalwear-2.jpg",
+                    "price": 550,
+                    "title": "Dobre cehla",
+                    "brand": "Nike"
+                  },
+                  {
+                    "id": "formalwear-3",
+                    "image": "formalwear-3.jpg",
+                    "price": 265,
+                    "title": "Cipele",
+                    "brand": "Nike"
+                  }
+                ]
+            },
+            "casual": {
+                "items": [
+                  {
+                    "id": "casual-1",
+                    "image": "casual-1.jpg",
+                    "price": 300,
+                    "title": "Polo majica"
+                  },
+                  {
+                    "id": "casual-2",
+                    "image": "casual-2.jpg",
+                    "price": 44,
+                    "title": "Carapcici na tufne"
+                  },
+                  {
+                    "id": "casual-3",
+                    "image": "casual-3.jpg",
+                    "price": 390,
+                    "title": "Cipele i torba"
+                  }
+                ]
+            }
           }
         }
       }

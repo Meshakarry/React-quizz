@@ -1,22 +1,27 @@
-import { Gender, useQuizStore } from '../store/quiz';
+import { useQuizStore } from '../store/quiz';
+// components
 import QuizOverview from './QuizOverview';
 import QuizSelectGender from './QuizSelectGender';
 import QuizStep from './QuizStep';
 
 export default function QuizMain () {
-  const { selectedGender, quizFinished, getCurrentStep, setGender, goToNextStep } = useQuizStore();
+  const {
+    steps,
+    selectedGender,
+    quizFinished,
+    currentStepIndex,
+    getCurrentStep,
+    setGender,
+    goToNextStep
+  } = useQuizStore();
   const currentStep = getCurrentStep();
 
-  function handleGenderSelect (gender: Gender) {
+  function handleGenderSelect (gender: string) {
     setGender(gender)
     goToNextStep()
   }
 
-  // if (!currentStep) {
-  //   return null;
-  // }
-  // TO DO: avoid magic string
-  if (!selectedGender && currentStep?.title === 'gender') {
+  if (!selectedGender && currentStepIndex === steps.mainSteps.length) {
     return (
       <QuizSelectGender onGenderSelect={(gender) => handleGenderSelect(gender) } />
     )

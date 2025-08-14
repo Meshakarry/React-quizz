@@ -1,4 +1,4 @@
-import { QuizItem } from '../store/quiz'
+import { QuizItem } from '../types/quiz'
 import { formatPrice } from '../helpers/formatPrice'
 
 interface QuizGenderCatgoryCardProps {

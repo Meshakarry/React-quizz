@@ -6,24 +6,17 @@ import { QuizSpenderTypeBadge } from './QuizSpenderTypeBadge';
 import QuizInfo from './QuizInfo';
 
 export default function QuizOverview () {
-  const { steps, selectedItems,  finishQuiz, toggleIsEdit, setCurrentStepIndex } = useQuizStore();
+  const { selectedItems, getSteps, toggleIsEdit, setCurrentStepIndex, finishQuiz } = useQuizStore();
+  const dataSteps = getSteps().filter(step => step.title !== 'gender');
 
   const totalPrice = useMemo(() => {
     return Object.values(selectedItems).reduce((price, item) => price + item.price, 0)
   }, [selectedItems])
 
-  const allSteps = useMemo(() => {
-    return [
-      ...steps.mainSteps,
-      ...steps.genderBasedSteps.map(step => ({
-        ...step,
-      }))
-    ];
-  }, [steps])
 
   function handleUpdateSelectedItem (index: number) {
     finishQuiz(false);
-    setCurrentStepIndex(index + 1);
+    setCurrentStepIndex(index);
     toggleIsEdit(true);
   }
 
@@ -34,8 +27,8 @@ export default function QuizOverview () {
       </h1>
 
       <QuizSpenderTypeBadge totalPrice={totalPrice} />
-      <QuizChart totalPrice={totalPrice} allSteps={allSteps} />
-      <QuizInfo allSteps={allSteps} onChangeHandler={handleUpdateSelectedItem} />
+      <QuizChart totalPrice={totalPrice} allSteps={dataSteps} />
+      <QuizInfo allSteps={dataSteps} onChangeHandler={handleUpdateSelectedItem} />
     </div>
   )
 }

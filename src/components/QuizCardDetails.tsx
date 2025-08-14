@@ -1,6 +1,6 @@
 import { formatPrice } from '../helpers/formatPrice'
 
-import { QuizItem } from '../store/quiz'
+import { QuizItem } from '../types/quiz'
 
 interface QuizCardDetailsProps {
   card: QuizItem
