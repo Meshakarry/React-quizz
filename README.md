@@ -18,3 +18,4 @@
 * double check needs for the themes json
 * get rid of the complex logic for getting current step
 * test everything properly
+* add selected state on fashion card
