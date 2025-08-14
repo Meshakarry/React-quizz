@@ -12,8 +12,6 @@ function App() {
   const bgColor = useMemo(() => {
     // this needs to be optimized as soon as possible
     const DEFAULT_BG_COLOR = '#fff';
-    console.log(currentStep?.title, 'title')
-    console.log(themes[themes.length - 1].color, 'themes find')
     const stepId = currentStep?.title?.toLowerCase();
     const genderTheme = themes.find(theme => theme?.gender === selectedGender && theme.stepId === stepId)
     const mainStepTheme = stepId ? themes.find(theme => theme.stepId === stepId) : themes[themes.length - 1];

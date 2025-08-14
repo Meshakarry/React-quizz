@@ -1,6 +1,9 @@
 import { QuizItem, GenderCategory, CategoryItems } from '../types/quiz';
 import { formatPrice } from '../helpers/formatPrice'
+// components
 import QuizGenderCategoryCard from './QuizGenderCategoryCard'
+import Check from './Icons/Check';
+
 
 interface QuizGenderCategoryStepProps {
   categories: GenderCategory;
@@ -52,13 +55,7 @@ export default function QuizGenderCategoryStep({ categories, selectedCardId, onS
               selectedCardId === categoryName && (
                 <div className="absolute rounded-[20px] inset-0 bg-black/70 flex items-center justify-center">
                   <div className="absolute top-1/2 -translate-y-1/2 bg-[var(--current-step-color)] w-20 h-20 rounded-full p-3 flex items-center justify-center">
-                    <img
-                      src={require('../assets/svg/check.svg').default}
-                      alt="Check icon"
-                      width={76}
-                      height={76}
-                      className="object-cover"
-                    />
+                    <Check className="w-[76px] h-[76px] text-white" />
                   </div>
                 </div>
               )
