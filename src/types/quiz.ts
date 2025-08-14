@@ -9,13 +9,17 @@ export interface QuizItem {
   brand?: string
 }
 
-export interface QuizSingleStep {
+export interface BaseStep { 
   id: number;
   title: string;
   logo: string;
   text: string;
-  items: QuizItem[];
   color?: string;
+}
+
+export interface QuizSingleStep extends BaseStep {
+  items: QuizItem[];
+  type: 'single'
 }
 
 export interface GenderOption {
@@ -32,6 +36,7 @@ export interface GenderStep {
   logo: string
   options: GenderOption[];
   color?: string
+  type?: 'gender'
 }
 
 export interface CategoryItems {
@@ -43,7 +48,8 @@ export interface GenderCategory {
   options: Record<string, CategoryItems>;
 }
 
-export interface GenderBasedStep extends Omit<QuizSingleStep, 'items'> {
+export interface GenderBasedStep extends BaseStep {
+  type: 'gender-based'
   genderSpecific: Record<string, GenderCategory>;
 }
 

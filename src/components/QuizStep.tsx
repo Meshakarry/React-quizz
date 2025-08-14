@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { QuizItem, QuizStepUnion } from '../types/quiz';
+import { useState, useEffect, useMemo } from 'react';
+import { QuizItem, QuizStepUnion, GenderBasedStep} from '../types/quiz';
 import { useQuizStore } from '../store/quiz';
 
 // components
@@ -9,7 +9,14 @@ import QuizGenderCategoryStep from './QuizGenderCategoryStep'
 import QuizMainStep from './QuizMainStep';
 
 interface QuizStepProps {
-  step: QuizStepUnion
+  step: QuizStepUnion | null
+}
+
+// move to the utils
+export function isGenderBasedStep(
+  step: QuizStepUnion,
+): step is GenderBasedStep {
+  return step?.type === 'gender-based';
 }
 
 export default function QuizStep ({ step }: QuizStepProps) {
@@ -24,20 +31,25 @@ export default function QuizStep ({ step }: QuizStepProps) {
   } = useQuizStore();
   const [selectedCardId, setSelectedCardId] = useState('');
   const totalSteps = getTotalSteps();
-  console.log(Object.values(steps))
+
+  const stepper = useMemo(() => {
+    const activeIndex = currentStepIndex >= totalSteps ? totalSteps : currentStepIndex + 1 // current step index starts at zero
+
+    return `${activeIndex}/${totalSteps}`
+  }, [currentStepIndex, totalSteps])
 
   function handleButtonClick() {
     if (!step) return;
 
     // SINGLE STEP
-    if ('items' in step) {
+    if (step.type === 'single') {
       const selectedItem = step.items.find(item => item.id === selectedCardId);
       if (!selectedItem) return;
       updateSelectedItem(selectedItem);
     }
 
     // GENDER-BASED STEP
-    else if ('genderSpecific' in step && selectedGender) {
+    else if (isGenderBasedStep(step) && selectedGender) {
       const categories = step.genderSpecific[selectedGender];
       const selectedCategory = Object.entries(categories.options).find(([categoryId]) => categoryId === selectedCardId);
 
@@ -67,7 +79,7 @@ export default function QuizStep ({ step }: QuizStepProps) {
 
   useEffect(() => {
     if (step) {
-      const color = selectedGender && 'genderSpecific' in step ? step?.genderSpecific[selectedGender]?.color : step?.color
+      const color = isGenderBasedStep(step) && selectedGender ? step?.genderSpecific[selectedGender]?.color : step?.color;
       document.body.style.setProperty('--current-step-color', `${color}`)
     }
   }, [step, selectedGender])
@@ -87,7 +99,7 @@ export default function QuizStep ({ step }: QuizStepProps) {
         icon={step.logo}
       />
       {
-        selectedGender && 'genderSpecific' in step ? (
+        isGenderBasedStep(step) && selectedGender ? (
           <QuizGenderCategoryStep
             selectedCardId={selectedCardId}
             categories={step.genderSpecific[selectedGender]}
@@ -105,7 +117,7 @@ export default function QuizStep ({ step }: QuizStepProps) {
       <QuizButton
         text={step.text}
         disabled={!selectedCardId}
-        stepper={`${step?.id}/${totalSteps}`}
+        stepper={stepper}
         nextStep={handleButtonClick}
       />
     </div>

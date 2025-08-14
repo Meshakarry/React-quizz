@@ -1,13 +1,17 @@
 import { useMemo } from 'react';
 import { useQuizStore } from '../store/quiz';
 import QuizChart from './QuizChart';
+import { formatPrice } from '../helpers/formatPrice'
+
 
 import { QuizSpenderTypeBadge } from './QuizSpenderTypeBadge';
 import QuizInfo from './QuizInfo';
 
+const GENDER_INTERMEDIATE_STEP = 'gender'
+
 export default function QuizOverview () {
   const { selectedItems, getSteps, toggleIsEdit, setCurrentStepIndex, finishQuiz } = useQuizStore();
-  const dataSteps = getSteps().filter(step => step.title !== 'gender');
+  const dataSteps = getSteps().filter(step => step.title !== GENDER_INTERMEDIATE_STEP);
 
   const totalPrice = useMemo(() => {
     return Object.values(selectedItems).reduce((price, item) => price + item.price, 0)
@@ -23,7 +27,7 @@ export default function QuizOverview () {
   return (
     <div>
       <h1 className="text-center text-black font-bold text-4xl leading-tight mb-2.5">
-        ${ totalPrice }
+        { formatPrice(totalPrice) }
       </h1>
 
       <QuizSpenderTypeBadge totalPrice={totalPrice} />

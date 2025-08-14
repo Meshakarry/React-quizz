@@ -6,6 +6,7 @@
       "text": "Select accommodation",
       "logo": "accommodations.svg",
       "color": "#5181fc",
+      "type": "single",
       "items": [
         {
           "id": "scenic-view",
@@ -36,6 +37,7 @@
       "text": "Select transport",
       "logo": "transport.svg",
       "color": "#d73780",
+      "type": "single",
       "items": [
         {
           "id": "luxury",
@@ -63,6 +65,7 @@
       "text": "Select food",
       "logo": "food.svg",
       "color": "#61ab04",
+      "type": "single",
       "items": [
         {
           "id": "gourmet-cuisine",
@@ -112,6 +115,7 @@
       "text": "Select your outfit",
       "logo": "fashion.svg",
       "color": "#c492ef",
+      "type": "gender-based",
       "genderSpecific": {
         "male": {
           "color": "#C6D9F3",
@@ -201,7 +205,7 @@
           }
         },
         "female": {
-          "color": "rgba(245, 221, 253, 0.69)",
+          "color": "rgba(245, 221, 253, 1)",
           "options": {
             "sportswear": {
                 "items": [
