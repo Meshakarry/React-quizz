@@ -3,9 +3,7 @@ import quizData from '../data/quiz.json'
 import {
   QuizData,
   QuizItem,
-  QuizSingleStep,
-  GenderBasedStep,
-  GenderStep,
+  QuizStepUnion
 } from '../types/quiz'
 
 interface QuizStore {
@@ -23,8 +21,8 @@ interface QuizStore {
   setCurrentStepIndex: (id: number) => void,
   setGender: (gender: string) => void;
   // getters(helpers)
-  getSteps: () => (QuizSingleStep | GenderBasedStep | GenderStep)[]
-  getCurrentStep: () => QuizSingleStep | GenderBasedStep | GenderStep | null; // check this type
+  getSteps: () => QuizStepUnion[]
+  getCurrentStep: () => QuizStepUnion | null; // check this type
   getTotalSteps: () => number;
 }
 
@@ -74,7 +72,7 @@ export const useQuizStore = create<QuizStore>((set, get) => ({
   // getters(helpers)
   getSteps: () => {
     const { steps, selectedGender } = get();
-    const quizSteps: (QuizSingleStep | GenderStep | GenderBasedStep)[] = [
+    const quizSteps: QuizStepUnion[] = [
       ...steps.mainSteps,
       steps.genderStep,
     ];

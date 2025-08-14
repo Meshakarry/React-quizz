@@ -52,3 +52,5 @@ export interface QuizData {
   genderStep: GenderStep;
   genderBasedSteps: GenderBasedStep[];
 }
+
+export type QuizStepUnion = QuizSingleStep | GenderBasedStep | GenderStep

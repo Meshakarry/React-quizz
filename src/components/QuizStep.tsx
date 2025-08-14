@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { QuizItem, QuizSingleStep, GenderBasedStep, GenderStep } from '../types/quiz';
+import { QuizItem, QuizStepUnion } from '../types/quiz';
 import { useQuizStore } from '../store/quiz';
 
 // components
@@ -9,7 +9,7 @@ import QuizGenderCategoryStep from './QuizGenderCategoryStep'
 import QuizMainStep from './QuizMainStep';
 
 interface QuizStepProps {
-  step: QuizSingleStep | GenderBasedStep | GenderStep | null
+  step: QuizStepUnion
 }
 
 export default function QuizStep ({ step }: QuizStepProps) {

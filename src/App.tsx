@@ -6,19 +6,29 @@ import { useQuizStore } from './store/quiz';
 import themes from './data/themes.json'
 
 function App() {
-  const { currentStepIndex, selectedGender, getCurrentStep } = useQuizStore();
+  const { currentStepIndex, selectedGender, quizFinished, getCurrentStep } = useQuizStore();
   const currentStep = getCurrentStep();
 
   const bgColor = useMemo(() => {
-    // this needs to be optimized as soon as possible
     const DEFAULT_BG_COLOR = '#fff';
     const stepId = currentStep?.title?.toLowerCase();
-    const genderTheme = themes.find(theme => theme?.gender === selectedGender && theme.stepId === stepId)
-    const mainStepTheme = stepId ? themes.find(theme => theme.stepId === stepId) : themes[themes.length - 1];
-    const theme = selectedGender && genderTheme ? genderTheme : mainStepTheme
+    if (quizFinished) {
+      return themes[themes.length - 1]?.color; // quiz overview
+    }
 
-    return theme?.color ?? DEFAULT_BG_COLOR;
-  }, [currentStep, selectedGender]);
+    const genderTheme = themes.find(theme => theme?.gender === selectedGender && theme.stepId === stepId)
+    if (genderTheme) {
+      return genderTheme?.color
+    }
+
+    const mainStepTheme = themes.find(theme => theme.stepId === stepId);
+
+    if (mainStepTheme) {
+      return mainStepTheme?.color;
+    }
+
+    return DEFAULT_BG_COLOR;
+  }, [currentStep, selectedGender, quizFinished]);
 
   useEffect(() => {
     document.body.style.setProperty('--bg-color', `${bgColor}`)

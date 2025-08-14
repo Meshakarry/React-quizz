@@ -1,4 +1,4 @@
-import { QuizSingleStep, GenderBasedStep, GenderStep } from '../types/quiz';
+import { QuizStepUnion } from '../types/quiz';
 import { useQuizStore } from '../store/quiz';
 import { formatPrice } from '../helpers/formatPrice';
 // components
@@ -9,7 +9,7 @@ import AccordionTrigger from './Accordion/AccordionTrigger';
 import AccordionContent from './Accordion/AccordionContent';
 
 interface QuizInfoProps {
-  allSteps: (QuizSingleStep | GenderBasedStep | GenderStep)[]
+  allSteps: QuizStepUnion[]
   onChangeHandler: (index: number) => void,
 }
 
