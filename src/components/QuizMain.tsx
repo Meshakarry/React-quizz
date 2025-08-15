@@ -1,8 +1,8 @@
-import { useQuizStore } from '../store/quiz';
+import { useQuizStore } from 'store/quiz';
 // components
-import QuizOverview from './QuizOverview';
-import QuizSelectGender from './QuizSelectGender';
-import QuizStep from './QuizStep';
+import QuizOverview from 'components/QuizOverview';
+import QuizSelectGender from 'components/QuizSelectGender';
+import QuizStep from 'components/QuizStep';
 
 export default function QuizMain () {
   const {

@@ -1,5 +1,5 @@
-import QuizButton from './QuizButton';
-import { useQuizStore } from '../store/quiz';
+import QuizButton from 'components/QuizButton';
+import { useQuizStore } from 'store/quiz';
 
 export default function QuizWelcome () {
   const { goToNextStep } = useQuizStore();

@@ -1,4 +1,4 @@
-import { AccordionItemProvider } from '../../context/AccordionContext'
+import { AccordionItemProvider } from 'context/AccordionContext'
 
 interface AccordionItemProps {
   id: string | null

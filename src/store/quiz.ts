@@ -1,10 +1,10 @@
 import { create } from 'zustand'
-import quizData from '../data/quiz.json'
+import quizData from 'data/quiz.json'
 import {
   QuizData,
   QuizItem,
   QuizStepUnion
-} from '../types/quiz'
+} from 'types/quiz'
 
 interface QuizStore {
   steps: QuizData

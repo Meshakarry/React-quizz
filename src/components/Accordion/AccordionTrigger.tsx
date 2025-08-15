@@ -1,5 +1,5 @@
-import { useAccordionContext, useAccordionItemContext } from '../../context/AccordionContext'
-import DownArrow from '../Icons/DownArrow';
+import { useAccordionContext, useAccordionItemContext } from 'context/AccordionContext'
+import DownArrow from 'components/Icons/DownArrow';
 
 // TO DO: children global type
 // TO DO: add chevron down to be here by default, also add support to shwo/hide it

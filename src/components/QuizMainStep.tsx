@@ -1,5 +1,5 @@
-import { QuizItem } from '../types/quiz';
-import QuizCard from './QuizCard';
+import { QuizItem } from 'types/quiz';
+import QuizCard from 'components/QuizCard';
 
 interface QuizStepProps {
   items: QuizItem[]

@@ -1,4 +1,4 @@
-import { useAccordionContext, useAccordionItemContext } from '../../context/AccordionContext'
+import { useAccordionContext, useAccordionItemContext } from 'context/AccordionContext'
 
 interface AccordionContentProps {
   children: React.ReactNode

@@ -1,9 +1,9 @@
 import { useEffect, useMemo} from 'react';
 
-import QuizMain from './components/QuizMain';
-import QuizWelcome from './components/QuizWelcome';
-import { useQuizStore } from './store/quiz';
-import themes from './data/themes.json'
+import QuizMain from 'components/QuizMain';
+import QuizWelcome from 'components/QuizWelcome';
+import { useQuizStore } from 'store/quiz';
+import themes from 'data/themes.json'
 
 function App() {
   const { currentStepIndex, selectedGender, quizFinished, getCurrentStep } = useQuizStore();

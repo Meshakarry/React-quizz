@@ -1,8 +1,8 @@
-import { QuizItem } from '../types/quiz'
-import LocationIcon from './Icons/Location'
+import { QuizItem } from 'types/quiz'
+import LocationIcon from 'components/Icons/Location'
 // components
-import QuizCardDetails from './QuizCardDetails'
-import QuizCardSelectedOverlay from './QuizCardSelectedOverlay'
+import QuizCardDetails from 'components/QuizCardDetails'
+import QuizCardSelectedOverlay from 'components/QuizCardSelectedOverlay'
 
 interface QuizCardProps {
   card: QuizItem

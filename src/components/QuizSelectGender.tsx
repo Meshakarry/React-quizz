@@ -1,9 +1,7 @@
-import QuizTitle from './QuizTitle';
-import { Gender } from '../types/quiz';
-import { useQuizStore } from '../store/quiz';
+import QuizTitle from 'components/QuizTitle';
+import { Gender } from 'types/quiz';
+import { useQuizStore } from 'store/quiz';
 
-
-// TO DO: Gender type
 interface QuizSelectGenderProps {
   onGenderSelect: (gender: Gender) => void
 }

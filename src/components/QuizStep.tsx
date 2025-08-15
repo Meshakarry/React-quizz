@@ -1,12 +1,12 @@
 import { useState, useEffect, useMemo } from 'react';
-import { QuizItem, QuizStepUnion, GenderBasedStep} from '../types/quiz';
-import { useQuizStore } from '../store/quiz';
+import { QuizItem, QuizStepUnion, GenderBasedStep} from 'types/quiz';
+import { useQuizStore } from 'store/quiz';
 
 // components
-import QuizTitle from './QuizTitle';
-import QuizButton from './QuizButton';
-import QuizGenderCategoryStep from './QuizGenderCategoryStep'
-import QuizMainStep from './QuizMainStep';
+import QuizTitle from 'components/QuizTitle';
+import QuizButton from 'components/QuizButton';
+import QuizGenderCategoryStep from 'components/QuizGenderCategoryStep'
+import QuizMainStep from 'components/QuizMainStep';
 
 interface QuizStepProps {
   step: QuizStepUnion | null

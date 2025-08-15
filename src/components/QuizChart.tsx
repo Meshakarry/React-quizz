@@ -2,8 +2,8 @@
 import { useMemo } from 'react';
 import { PieChart } from 'react-minimal-pie-chart';
 
-import { QuizStepUnion } from '../types/quiz';
-import { useQuizStore } from '../store/quiz';
+import { QuizStepUnion } from 'types/quiz';
+import { useQuizStore } from 'store/quiz';
 
 interface QuizChartProps {
   allSteps: QuizStepUnion[]

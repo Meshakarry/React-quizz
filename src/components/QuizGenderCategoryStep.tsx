@@ -1,9 +1,8 @@
-import { QuizItem, GenderCategory, CategoryItems } from '../types/quiz';
-import { formatPrice } from '../helpers/formatPrice'
+import { QuizItem, GenderCategory, CategoryItems } from 'types/quiz';
+import { formatPrice } from 'helpers/formatPrice'
 // components
-import QuizGenderCategoryCard from './QuizGenderCategoryCard'
-import Check from './Icons/Check';
-
+import QuizGenderCategoryCard from 'components/QuizGenderCategoryCard'
+import Check from 'components/Icons/Check';
 
 interface QuizGenderCategoryStepProps {
   categories: GenderCategory;

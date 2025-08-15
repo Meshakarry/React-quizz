@@ -1,4 +1,4 @@
-import { AccordionProvider } from '../../context/AccordionContext'
+import { AccordionProvider } from 'context/AccordionContext'
 
 interface AccordionProps {
   children: React.ReactNode

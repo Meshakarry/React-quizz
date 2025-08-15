@@ -1,11 +1,10 @@
 import { useMemo } from 'react';
-import { useQuizStore } from '../store/quiz';
-import QuizChart from './QuizChart';
-import { formatPrice } from '../helpers/formatPrice'
-
-
-import { QuizSpenderTypeBadge } from './QuizSpenderTypeBadge';
-import QuizInfo from './QuizInfo';
+import { useQuizStore } from 'store/quiz';
+import { formatPrice } from 'helpers/formatPrice'
+//components
+import { QuizSpenderTypeBadge } from 'components/QuizSpenderTypeBadge';
+import QuizChart from 'components/QuizChart';
+import QuizInfo from 'components/QuizInfo';
 
 const GENDER_INTERMEDIATE_STEP = 'gender'
 

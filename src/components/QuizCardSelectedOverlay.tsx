@@ -1,4 +1,4 @@
-import Check from './Icons/Check';
+import Check from 'components/Icons/Check';
 
 export default function QuizCardSelectedOverlay () {
   return (

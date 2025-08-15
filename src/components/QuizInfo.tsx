@@ -1,12 +1,12 @@
-import { QuizStepUnion } from '../types/quiz';
-import { useQuizStore } from '../store/quiz';
-import { formatPrice } from '../helpers/formatPrice';
+import { QuizStepUnion } from 'types/quiz';
+import { useQuizStore } from 'store/quiz';
+import { formatPrice } from 'helpers/formatPrice';
 // components
-import QuizTitle from './QuizTitle';
-import Accordion from './Accordion/Accordion';
-import AccordionItem from './Accordion/AccordionItem';
-import AccordionTrigger from './Accordion/AccordionTrigger';
-import AccordionContent from './Accordion/AccordionContent';
+import QuizTitle from 'components/QuizTitle';
+import Accordion from 'components/Accordion/Accordion';
+import AccordionItem from 'components/Accordion/AccordionItem';
+import AccordionTrigger from 'components/Accordion/AccordionTrigger';
+import AccordionContent from 'components/Accordion/AccordionContent';
 
 interface QuizInfoProps {
   allSteps: QuizStepUnion[]

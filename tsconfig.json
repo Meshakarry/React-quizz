@@ -18,15 +18,11 @@
     "resolveJsonModule": true, // Allows importing .json files.
     "isolatedModules": true, // Ensures that each file can be safely transpiled without relying on other files.
     "noEmit": true, // Disables emitting output files. Useful when using a bundler like Webpack.
-    "jsx": "react-jsx" // Specifies the JSX emit mode for React.
+    "jsx": "react-jsx", // Specifies the JSX emit mode for React.
+    "baseUrl": "src",
   },
-  "include": [
-    "src" // Specifies an array of glob patterns or file paths to include in the program.
-  ],
+  "include": ["src"],
   "exclude": [
     "node_modules" // Specifies an array of glob patterns or file paths to exclude from the program.
   ],
-  "paths": {
-    "@/*": ["./src/*"]
-  }
 }
