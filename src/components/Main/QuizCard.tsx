@@ -12,7 +12,7 @@ interface QuizCardProps {
 
 export default function QuizCard ({ card, selected, onSelectCard } : QuizCardProps) {
   return (
-    <div className="h-[250px] relative">
+    <div className="h-[358px] relative">
       <img
         className="rounded-[20px] h-full w-full"
         src={`/images/${card.thumbnail.dir}/${card.thumbnail.filename}`}

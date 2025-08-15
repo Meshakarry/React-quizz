@@ -16,7 +16,60 @@
           },
           "price": 700,
           "title": "Scenic view",
-          "location": "Vesela city"
+          "location": "Vesela city",
+          "options": {
+            "price_per_week": 440,
+            "agent": {
+              "exists": true,
+              "name": "Pete Agent",
+              "avatar": {
+                "dir": "avatars",
+                "filename": "pete_agent.png"
+              }
+            },
+            "rating": {
+              "exists": true,
+              "value": 3,
+              "review_amount": 20
+            },
+            "tooltip": {
+              "exists": true,
+              "data": [
+                {
+                  "name": "%s Payment",
+                  "value": 343.86
+                },
+                {
+                  "name": "Loan Length (years)",
+                  "value": "25"
+                },
+                {
+                  "name": "Interest Rate",
+                  "value": "3%"
+                },
+                {
+                  "name": "Facilities (%s)",
+                  "value": 50
+                },
+                {
+                  "name": "Council Fees (%s)",
+                  "value": 20
+                },
+                {
+                  "name": "Return",
+                  "value": "5%"
+                },
+                {
+                  "name": "Deposit",
+                  "value": "10-20%"
+                },
+                {
+                  "name": "Legals / SD / LMI",
+                  "value": "10%"
+                }
+              ]
+            }
+          }
         },
         {
           "id": "quaint",
@@ -26,7 +79,60 @@
           },
           "price": 550,
           "title": "Quaint",
-          "location": "Turbe b.b"
+          "location": "Turbe b.b",
+          "options": {
+            "price_per_week": 285,
+            "agent": {
+              "exists": true,
+              "name": "Pete Agent",
+              "avatar": {
+                "dir": "avatars",
+                "filename": "pete_agent.png"
+              }
+            },
+            "rating": {
+              "exists": true,
+              "value": 5,
+              "review_amount": 72
+            },
+            "tooltip": {
+              "exists": true,
+              "data": [
+                {
+                  "name": "%s Payment",
+                  "value": 731.38
+                },
+                {
+                  "name": "Loan Length (years)",
+                  "value": "25"
+                },
+                {
+                  "name": "Interest Rate",
+                  "value": "3%"
+                },
+                {
+                  "name": "Facilities (%s)",
+                  "value": 150
+                },
+                {
+                  "name": "Council Fees (%s)",
+                  "value": 30
+                },
+                {
+                  "name": "Return",
+                  "value": "4%"
+                },
+                {
+                  "name": "Deposit",
+                  "value": "10-20%"
+                },
+                {
+                  "name": "Legals / SD / LMI",
+                  "value": "10%"
+                }
+              ]
+            }
+          }
         },
         {
           "id": "cheap-accommodation",
@@ -36,7 +142,60 @@
           },
           "price": 350,
           "title": "Cheap accommodation",
-          "location": "Sultan ahmedova 29."
+          "location": "Sultan ahmedova 29.",
+          "options": {
+            "price_per_week": 150,
+            "agent": {
+              "exists": true,
+              "name": "Pete Agent",
+              "avatar": {
+                "dir": "avatars",
+                "filename": "pete_agent.png"
+              }
+            },
+            "rating": {
+              "exists": true,
+              "value": 5,
+              "review_amount": 112
+            },
+            "tooltip": {
+              "exists": true,
+              "data": [
+                {
+                  "name": "%s Payment",
+                  "value": 1309.93
+                },
+                {
+                  "name": "Loan Length (years)",
+                  "value": "25"
+                },
+                {
+                  "name": "Interest Rate",
+                  "value": "3%"
+                },
+                {
+                  "name": "Facilities (%s)",
+                  "value": 300
+                },
+                {
+                  "name": "Council Fees (%s)",
+                  "value": 40
+                },
+                {
+                  "name": "Return",
+                  "value": "3%"
+                },
+                {
+                  "name": "Deposit",
+                  "value": "10-20%"
+                },
+                {
+                  "name": "Legals / SD / LMI",
+                  "value": "10%"
+                }
+              ]
+            }
+          }
         }
       ]
     },

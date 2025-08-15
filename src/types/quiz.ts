@@ -10,6 +10,7 @@ export interface QuizItem {
   title: string
   location?: string
   brand?: string
+  options?: Record<string, any>
 }
 
 export interface BaseStep {
