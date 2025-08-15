@@ -1,13 +1,13 @@
 import { QuizItem } from 'types/quiz'
 import LocationIcon from 'components/Icons/Location'
 // components
-import QuizCardDetails from 'components/QuizCardDetails'
-import QuizCardSelectedOverlay from 'components/QuizCardSelectedOverlay'
+import QuizCardDetails from 'components/Main/QuizCardDetails'
+import QuizItemSelectedOverlay from 'components/Common/QuizItemSelectedOverlay'
 
 interface QuizCardProps {
   card: QuizItem
   selected: boolean
-  onSelectCard: (card: QuizItem) => void
+  onSelectCard: (itemId: string) => void
 }
 
 export default function QuizCard ({ card, selected, onSelectCard } : QuizCardProps) {
@@ -15,7 +15,7 @@ export default function QuizCard ({ card, selected, onSelectCard } : QuizCardPro
     <div className="h-[250px] relative">
       <img
         className="rounded-[20px] h-full w-full"
-        src={require(`../assets/images/${card.image}`)}
+        src={`/images/${card.thumbnail.dir}/${card.thumbnail.filename}`}
         alt={card.title}
       />
 
@@ -30,7 +30,13 @@ export default function QuizCard ({ card, selected, onSelectCard } : QuizCardPro
 
       {
         selected && (
-          <QuizCardSelectedOverlay />
+          <QuizItemSelectedOverlay
+            className="top-1/4"
+            icon={{
+              width: 44,
+              height: 44
+            }}
+          />
         )
       }
 
@@ -41,7 +47,7 @@ export default function QuizCard ({ card, selected, onSelectCard } : QuizCardPro
 
       <button
         className="absolute inset-0 -bottom-1 z-10"
-        onClick={() => onSelectCard(card)}
+        onClick={() => onSelectCard(card.id)}
       />
     </div>
   )

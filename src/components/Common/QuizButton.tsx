@@ -1,11 +1,11 @@
 interface QuizButtonProps {
   text: string
   disabled?: boolean
-  stepper?: string // double check this name data coming in this format(1/3)
+  stepProgress?: string // double check this name data coming in this format(1/3)
   nextStep: () => void
 }
 
-export default function QuizButton ({ text, disabled = false, stepper, nextStep }: QuizButtonProps) {
+export default function QuizButton ({ text, disabled = false, stepProgress, nextStep }: QuizButtonProps) {
   return (
     <button
       className={
@@ -19,7 +19,7 @@ export default function QuizButton ({ text, disabled = false, stepper, nextStep 
       onClick={nextStep}
     >
       <span className="flex-1">{ text }</span>
-      { stepper && <span className="text-xl leading-normal">{ stepper }</span> }
+      { stepProgress && <span className="text-xl leading-normal">{ stepProgress }</span> }
     </button>
   )
 }

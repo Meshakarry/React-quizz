@@ -1,7 +1,7 @@
 import { useEffect, useMemo} from 'react';
 
-import QuizMain from 'components/QuizMain';
-import QuizWelcome from 'components/QuizWelcome';
+import QuizSteps from 'components/Steps/QuizSteps';
+import QuizWelcome from 'components/Home/QuizWelcome';
 import { useQuizStore } from 'store/quiz';
 import themes from 'data/themes.json'
 
@@ -41,7 +41,7 @@ return (
           currentStepIndex === -1 ? (
             <QuizWelcome />
           ) : (
-            <QuizMain />
+            <QuizSteps />
           )
         }
       </div>

@@ -2,15 +2,13 @@ import { useMemo } from 'react';
 import { useQuizStore } from 'store/quiz';
 import { formatPrice } from 'helpers/formatPrice'
 //components
-import { QuizSpenderTypeBadge } from 'components/QuizSpenderTypeBadge';
-import QuizChart from 'components/QuizChart';
-import QuizInfo from 'components/QuizInfo';
-
-const GENDER_INTERMEDIATE_STEP = 'gender'
+import { QuizSpenderTypeBadge } from 'components/Overview/QuizSpenderTypeBadge';
+import QuizChart from 'components/Overview/QuizChart';
+import QuizInfo from 'components/Overview/QuizInfo';
 
 export default function QuizOverview () {
   const { selectedItems, getSteps, toggleIsEdit, setCurrentStepIndex, finishQuiz } = useQuizStore();
-  const dataSteps = getSteps().filter(step => step.title !== GENDER_INTERMEDIATE_STEP);
+  const dataSteps = getSteps();
 
   const totalPrice = useMemo(() => {
     return Object.values(selectedItems).reduce((price, item) => price + item.price, 0)
@@ -30,8 +28,8 @@ export default function QuizOverview () {
       </h1>
 
       <QuizSpenderTypeBadge totalPrice={totalPrice} />
-      <QuizChart totalPrice={totalPrice} allSteps={dataSteps} />
-      <QuizInfo allSteps={dataSteps} onChangeHandler={handleUpdateSelectedItem} />
+      <QuizChart totalPrice={totalPrice} quizSteps={dataSteps} />
+      <QuizInfo quizSteps={dataSteps} onChangeHandler={handleUpdateSelectedItem} />
     </div>
   )
 }

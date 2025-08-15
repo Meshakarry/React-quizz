@@ -10,7 +10,7 @@ export default function QuizGenderCatgoryCard ({ category } : QuizGenderCatgoryC
     <div>
       <img
         alt={category.title}
-        src={require(`../assets/images/fashion/${category.image}`)}
+        src={`/images/${category.thumbnail.dir}/${category.thumbnail.filename}`}
         className="w-full h-[100px] object-cover rounded-[20px] mb-3"
       />
 

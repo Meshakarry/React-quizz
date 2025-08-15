@@ -1,4 +1,4 @@
-import QuizButton from 'components/QuizButton';
+import QuizButton from 'components/Common/QuizButton';
 import { useQuizStore } from 'store/quiz';
 
 export default function QuizWelcome () {

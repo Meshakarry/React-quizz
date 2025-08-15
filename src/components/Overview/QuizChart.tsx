@@ -6,11 +6,11 @@ import { QuizStepUnion } from 'types/quiz';
 import { useQuizStore } from 'store/quiz';
 
 interface QuizChartProps {
-  allSteps: QuizStepUnion[]
+  quizSteps: QuizStepUnion[]
   totalPrice: number
 }
 
-export default function QuizChart({ totalPrice, allSteps }: QuizChartProps) {
+export default function QuizChart({ totalPrice, quizSteps }: QuizChartProps) {
   const { selectedItems } = useQuizStore();
 
   const pricesPercentages = useMemo(() =>
@@ -18,11 +18,11 @@ export default function QuizChart({ totalPrice, allSteps }: QuizChartProps) {
   , [selectedItems, totalPrice])
 
   const chartData = useMemo(() => {
-    return allSteps.map((step, index) => ({
+    return quizSteps.map((step, index) => ({
         color: step.color ?? '',
         value: Object.values(selectedItems)[index]?.price ?? 0,
     }));
-  }, [allSteps, selectedItems]);
+  }, [quizSteps, selectedItems]);
 
   return (
     <div className="bg-white mx-auto rounded-[20px] pl-12 pr-14 py-7 gap-4 mb-9 flex justify-around items-center md:max-w-[720px]">
@@ -33,7 +33,7 @@ export default function QuizChart({ totalPrice, allSteps }: QuizChartProps) {
         </div>
 
         <ul className="flex flex-col justify-center gap-2.5">
-          { allSteps.map((step, index) =>
+          { quizSteps.map((step, index) =>
             <li key={index}>
               <span
                  className="w-4 h-4 mr-2 inline-block bg-[var(--legend-bg-color)]"

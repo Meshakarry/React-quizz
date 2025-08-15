@@ -1,28 +1,18 @@
-import { QuizItem, GenderCategory, CategoryItems } from 'types/quiz';
+import { GenderCategory } from 'types/quiz';
 import { formatPrice } from 'helpers/formatPrice'
 // components
-import QuizGenderCategoryCard from 'components/QuizGenderCategoryCard'
-import Check from 'components/Icons/Check';
+import QuizGenderCategoryCard from 'components/GenderBased/QuizGenderCategoryCard'
+import QuizItemSelectedOverlay from 'components/Common/QuizItemSelectedOverlay'
 
 interface QuizGenderCategoryStepProps {
   categories: GenderCategory;
   selectedCardId?: string
-  onSelectCategory: (card: QuizItem) => void
+  onSelectCategory: (itemId: string) => void
 }
 
 export default function QuizGenderCategoryStep({ categories, selectedCardId, onSelectCategory }: QuizGenderCategoryStepProps) {
-  function handleCategoryClick(categoryName: string, category: CategoryItems) {
-    const totalPrice = category.items.reduce((sum: number, item: QuizItem) => sum + item.price, 0);
-    const previewImage = category.items[0]?.image;
-
-    const formattedCategory: QuizItem = {
-      id: categoryName,
-      title: categoryName.charAt(0).toUpperCase() + categoryName.slice(1),
-      image: previewImage ?? '',
-      price: totalPrice,
-    };
-
-    onSelectCategory(formattedCategory);
+  function handleCategoryClick(categoryName: string) {
+    onSelectCategory(categoryName);
   }
 
   return (
@@ -47,16 +37,18 @@ export default function QuizGenderCategoryStep({ categories, selectedCardId, onS
             </div>
             <button
               className="absolute inset-0 z-10"
-              onClick={() => handleCategoryClick(categoryName, category)}
+              onClick={() => handleCategoryClick(categoryName)}
             />
 
             {
               selectedCardId === categoryName && (
-                <div className="absolute rounded-[20px] inset-0 bg-black/70 flex items-center justify-center">
-                  <div className="absolute top-1/2 -translate-y-1/2 bg-[var(--current-step-color)] w-20 h-20 rounded-full p-3 flex items-center justify-center">
-                    <Check className="w-[76px] h-[76px] text-white" />
-                  </div>
-                </div>
+                <QuizItemSelectedOverlay
+                  className="w-20 h-20 top-1/2 -translate-y-1/2"
+                  icon={{
+                    width: 76,
+                    height: 76
+                  }}
+                />
               )
             }
           </div>

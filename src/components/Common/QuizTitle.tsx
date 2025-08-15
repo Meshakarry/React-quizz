@@ -16,7 +16,7 @@ export default function QuizTitle ({ title, icon, iconSize = 24, hideMarginBotto
       }
     >
        <img
-          src={require(`../assets/svg/${icon}`)}
+          src={require(`../../assets/svg/${icon}`)}
           alt={title}
           width={iconSize}
           height={iconSize}

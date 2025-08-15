@@ -3,10 +3,10 @@ import { QuizItem, QuizStepUnion, GenderBasedStep} from 'types/quiz';
 import { useQuizStore } from 'store/quiz';
 
 // components
-import QuizTitle from 'components/QuizTitle';
-import QuizButton from 'components/QuizButton';
-import QuizGenderCategoryStep from 'components/QuizGenderCategoryStep'
-import QuizMainStep from 'components/QuizMainStep';
+import QuizTitle from 'components/Common/QuizTitle';
+import QuizButton from 'components/Common/QuizButton';
+import QuizGenderCategoryStep from 'components/Steps/QuizGenderCategoryStep'
+import QuizMainStep from 'components/Steps/QuizMainStep';
 
 interface QuizStepProps {
   step: QuizStepUnion | null
@@ -32,7 +32,7 @@ export default function QuizStep ({ step }: QuizStepProps) {
   const [selectedCardId, setSelectedCardId] = useState('');
   const totalSteps = getTotalSteps();
 
-  const stepper = useMemo(() => {
+  const stepProgress = useMemo(() => {
     const activeIndex = currentStepIndex >= totalSteps ? totalSteps : currentStepIndex + 1 // current step index starts at zero
 
     return `${activeIndex}/${totalSteps}`
@@ -57,12 +57,12 @@ export default function QuizStep ({ step }: QuizStepProps) {
 
       const [categoryId, category] = selectedCategory;
       const totalPrice = category.items.reduce((sum, item) => sum + item.price, 0);
-      const previewImage = category.items[0]?.image;
+      const previewImage = category.items[0]?.thumbnail;
 
       const formattedCategory: QuizItem = {
         id: categoryId,
         title: categoryId.charAt(0).toUpperCase() + categoryId.slice(1),
-        image: previewImage ?? '',
+        thumbnail: previewImage,
         price: totalPrice,
       };
 
@@ -73,8 +73,8 @@ export default function QuizStep ({ step }: QuizStepProps) {
   }
 
 
-  function handleCardSelect (card: QuizItem) {
-    setSelectedCardId((prevSelected) => prevSelected === card.id ? '' : card.id);
+  function handleCardSelect (itemId: string) {
+    setSelectedCardId((prevSelected) => prevSelected === itemId ? '' : itemId);
   }
 
   useEffect(() => {
@@ -117,7 +117,7 @@ export default function QuizStep ({ step }: QuizStepProps) {
       <QuizButton
         text={step.text}
         disabled={!selectedCardId}
-        stepper={stepper}
+        stepProgress={stepProgress}
         nextStep={handleButtonClick}
       />
     </div>

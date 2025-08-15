@@ -1,10 +1,10 @@
 import { useQuizStore } from 'store/quiz';
 // components
-import QuizOverview from 'components/QuizOverview';
-import QuizSelectGender from 'components/QuizSelectGender';
-import QuizStep from 'components/QuizStep';
+import QuizOverview from 'components/Overview/QuizOverview';
+import QuizSelectGenderStep from 'components/Steps/QuizSelectGenderStep';
+import QuizStep from 'components/Common/QuizStep';
 
-export default function QuizMain () {
+export default function QuizSteps () {
   const {
     steps,
     selectedGender,
@@ -12,18 +12,16 @@ export default function QuizMain () {
     currentStepIndex,
     getCurrentStep,
     setGender,
-    goToNextStep
   } = useQuizStore();
   const currentStep = getCurrentStep();
 
   function handleGenderSelect (gender: string) {
     setGender(gender)
-    goToNextStep()
   }
 
   if (!selectedGender && currentStepIndex === steps.mainSteps.length) {
     return (
-      <QuizSelectGender onGenderSelect={(gender) => handleGenderSelect(gender) } />
+      <QuizSelectGenderStep onGenderSelect={(gender) => handleGenderSelect(gender) } />
     )
   }
 

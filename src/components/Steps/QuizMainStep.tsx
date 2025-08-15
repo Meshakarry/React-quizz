@@ -1,10 +1,10 @@
 import { QuizItem } from 'types/quiz';
-import QuizCard from 'components/QuizCard';
+import QuizCard from 'components/Main/QuizCard';
 
 interface QuizStepProps {
   items: QuizItem[]
   selectedCardId?: string
-  onSelectCard: (card: QuizItem) => void
+  onSelectCard: (itemId: string) => void
 }
 
 export default function QuizMainStep ({ items, selectedCardId,  onSelectCard }: QuizStepProps) {

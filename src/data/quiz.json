@@ -10,21 +10,30 @@
       "items": [
         {
           "id": "scenic-view",
-          "image": "accommodation-scenic.jpeg",
+          "thumbnail": {
+            "dir": "accommodation",
+            "filename": "accommodation-scenic.jpeg"
+          },
           "price": 700,
           "title": "Scenic view",
           "location": "Vesela city"
         },
         {
           "id": "quaint",
-          "image": "accommodation-quaint.jpeg",
+          "thumbnail": {
+            "dir": "accommodation",
+            "filename": "accommodation-quaint.jpeg"
+          },
           "price": 550,
           "title": "Quaint",
           "location": "Turbe b.b"
         },
         {
           "id": "cheap-accommodation",
-          "image": "accommodation-cheap.jpeg",
+          "thumbnail": {
+            "dir": "accommodation",
+            "filename": "accommodation-cheap.jpeg"
+          },
           "price": 350,
           "title": "Cheap accommodation",
           "location": "Sultan ahmedova 29."
@@ -41,19 +50,28 @@
       "items": [
         {
           "id": "luxury",
-          "image": "transport-luxury.jpeg",
+          "thumbnail": {
+            "dir": "transport",
+            "filename": "transport-luxury.jpeg"
+          },
           "price": 600,
           "title": "Luxury"
         },
         {
           "id": "public-transport",
-          "image": "transport-public.jpeg",
+          "thumbnail": {
+            "dir": "transport",
+            "filename": "transport-public.jpeg"
+          },
           "price": 450,
           "title": "Public transport"
         },
         {
           "id": "cheap-transport",
-          "image": "transport-cheap.jpeg",
+          "thumbnail": {
+            "dir": "transport",
+            "filename": "transport-cheap.jpeg"
+          },
           "price": 250,
           "title": "Cheap transport"
         }
@@ -69,45 +87,34 @@
       "items": [
         {
           "id": "gourmet-cuisine",
-          "image": "food-gourmet.jpeg",
+          "thumbnail": {
+            "dir": "food",
+            "filename": "food-gourmet.jpeg"
+          },
           "price": 500,
           "title": "Gourmet cuisine"
         },
         {
           "id": "traditional",
-          "image": "food-traditional.jpeg",
+          "thumbnail": {
+            "dir": "food",
+            "filename": "food-traditional.jpeg"
+          },
           "price": 400,
           "title": "Traditional"
         },
         {
           "id": "cheap-food",
-          "image": "food-cheap.jpeg",
+          "thumbnail": {
+            "dir": "food",
+            "filename": "food-cheap.jpeg"
+          },
           "price": 300,
           "title": "Cheap food"
         }
       ]
     }
   ],
-  "genderStep": {
-    "id": 3,
-    "text": "Please choose your gender to proceed:",
-    "title": "gender",
-    "logo": "fashion.svg",
-    "options": [
-      {
-        "id": "male",
-        "label": "Male",
-        "image": "male.png",
-        "color": "#5181fc"
-      },
-      {
-        "id": "female",
-        "label": "Female",
-        "image": "female.png",
-        "color": "#c492ef"
-      }
-    ]
-  },
   "genderBasedSteps": [
     {
       "id": 4,
@@ -124,28 +131,40 @@
                 "items": [
                   {
                     "id": "sportwear-1",
-                    "image": "sportwear-1.jpg",
+                    "thumbnail": {
+                      "dir": "fashion",
+                      "filename": "sportwear-1.jpg"
+                    },
                     "price": 300,
                     "title": "Helanke za trening",
                     "brand": "Nike"
                   },
                   {
                     "id": "sportwear-2",
-                    "image": "sportwear-2.jpg",
+                    "thumbnail": {
+                      "dir": "fashion",
+                      "filename": "sportwear-2.jpg"
+                    },
                     "price": 200,
                     "title": "Lagana majica",
                     "brand": "Nike"
                   },
                   {
                     "id": "sportwear-3",
-                    "image": "sportwear-3.jpg",
+                    "thumbnail": {
+                      "dir": "fashion",
+                      "filename": "sportwear-3.jpg"
+                    },
                     "price": 89,
                     "title": "Patike za basket",
                     "brand": "Nike"
                   },
                   {
                     "id": "sportwear-4",
-                    "image": "sportwear-4.jpg",
+                    "thumbnail": {
+                      "dir": "fashion",
+                      "filename": "sportwear-4.jpg"
+                    },
                     "price": 200,
                     "title": "Jordan trenerka",
                     "brand": "Nike"
@@ -156,21 +175,30 @@
                 "items": [
                   {
                     "id": "formalwear-1",
-                    "image": "formalwear-1.jpg",
+                    "thumbnail": {
+                      "dir": "fashion",
+                      "filename": "formalwear-1.jpg"
+                    },
                     "price": 880,
                     "title": "Kosuljica",
                     "brand": "Nike"
                   },
                   {
                     "id": "formalwear-2",
-                    "image": "formalwear-2.jpg",
+                    "thumbnail": {
+                      "dir": "fashion",
+                      "filename": "formalwear-2.jpg"
+                    },
                     "price": 550,
                     "title": "Dobre cehla",
                     "brand": "Nike"
                   },
                   {
                     "id": "formalwear-3",
-                    "image": "formalwear-3.jpg",
+                    "thumbnail": {
+                      "dir": "fashion",
+                      "filename": "formalwear-3.jpg"
+                    },
                     "price": 265,
                     "title": "Cipele",
                     "brand": "Nike"
@@ -181,21 +209,30 @@
                 "items": [
                   {
                     "id": "casual-1",
-                    "image": "casual-1.jpg",
+                    "thumbnail": {
+                      "dir": "fashion",
+                      "filename": "casual-1.jpg"
+                    },
                     "price": 300,
                     "title": "Polo majica",
                     "brand": "Samo brendirano"
                   },
                   {
                     "id": "casual-2",
-                    "image": "casual-2.jpg",
+                    "thumbnail": {
+                      "dir": "fashion",
+                      "filename": "casual-2.jpg"
+                    },
                     "price": 44,
                     "title": "Carapcici na tufne",
                     "brand": "Samo brendirano"
                   },
                   {
                     "id": "casual-3",
-                    "image": "casual-3.jpg",
+                    "thumbnail": {
+                      "dir": "fashion",
+                      "filename": "casual-3.jpg"
+                    },
                     "price": 390,
                     "title": "Cipele i torba",
                     "brand": "Samo brendirano"
@@ -211,28 +248,40 @@
                 "items": [
                   {
                     "id": "sportwear-1",
-                    "image": "sportwear-1.jpg",
+                    "thumbnail": {
+                      "dir": "fashion",
+                      "filename": "sportwear-1.jpg"
+                    },
                     "price": 300,
                     "title": "Helanke za trening",
                     "brand": "Nike"
                   },
                   {
                     "id": "sportwear-2",
-                    "image": "sportwear-2.jpg",
+                    "thumbnail": {
+                      "dir": "fashion",
+                      "filename": "sportwear-2.jpg"
+                    },
                     "price": 200,
                     "title": "Lagana majica",
                     "brand": "Nike"
                   },
                   {
                     "id": "sportwear-3",
-                    "image": "sportwear-3.jpg",
+                    "thumbnail": {
+                      "dir": "fashion",
+                      "filename": "sportwear-3.jpg"
+                    },
                     "price": 89,
                     "title": "Patike za basket",
                     "brand": "Nike"
                   },
                   {
                     "id": "sportwear-4",
-                    "image": "sportwear-4.jpg",
+                    "thumbnail": {
+                      "dir": "fashion",
+                      "filename": "sportwear-4.jpg"
+                    },
                     "price": 200,
                     "title": "Jordan trenerka",
                     "brand": "Nike"
@@ -243,21 +292,30 @@
                 "items": [
                   {
                     "id": "formalwear-1",
-                    "image": "formalwear-1.jpg",
+                    "thumbnail": {
+                      "dir": "fashion",
+                      "filename": "formalwear-1.jpg"
+                    },
                     "price": 880,
                     "title": "",
                     "brand": "Kosuljica"
                   },
                   {
                     "id": "formalwear-2",
-                    "image": "formalwear-2.jpg",
+                    "thumbnail": {
+                      "dir": "fashion",
+                      "filename": "formalwear-2.jpg"
+                    },
                     "price": 550,
                     "title": "Dobre cehla",
                     "brand": "Nike"
                   },
                   {
                     "id": "formalwear-3",
-                    "image": "formalwear-3.jpg",
+                    "thumbnail": {
+                      "dir": "fashion",
+                      "filename": "formalwear-3.jpg"
+                    },
                     "price": 265,
                     "title": "Cipele",
                     "brand": "Nike"
@@ -268,19 +326,28 @@
                 "items": [
                   {
                     "id": "casual-1",
-                    "image": "casual-1.jpg",
+                    "thumbnail": {
+                      "dir": "fashion",
+                      "filename": "casual-1.jpg"
+                    },
                     "price": 300,
                     "title": "Polo majica"
                   },
                   {
                     "id": "casual-2",
-                    "image": "casual-2.jpg",
+                    "thumbnail": {
+                      "dir": "fashion",
+                      "filename": "casual-2.jpg"
+                    },
                     "price": 44,
                     "title": "Carapcici na tufne"
                   },
                   {
                     "id": "casual-3",
-                    "image": "casual-3.jpg",
+                    "thumbnail": {
+                      "dir": "fashion",
+                      "filename": "casual-3.jpg"
+                    },
                     "price": 390,
                     "title": "Cipele i torba"
                   }

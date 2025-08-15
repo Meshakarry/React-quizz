@@ -2,14 +2,17 @@ export type Gender = 'male' | 'female';
 
 export interface QuizItem {
   id: string
-  image: string
+  thumbnail: {
+    dir: string,
+    filename: string
+  }
   price: number
   title: string
   location?: string
   brand?: string
 }
 
-export interface BaseStep { 
+export interface BaseStep {
   id: number;
   title: string;
   logo: string;
@@ -55,8 +58,8 @@ export interface GenderBasedStep extends BaseStep {
 
 export interface QuizData {
   mainSteps: QuizSingleStep[];
-  genderStep: GenderStep;
+  // genderStep: GenderStep;
   genderBasedSteps: GenderBasedStep[];
 }
 
-export type QuizStepUnion = QuizSingleStep | GenderBasedStep | GenderStep
+export type QuizStepUnion = QuizSingleStep | GenderBasedStep

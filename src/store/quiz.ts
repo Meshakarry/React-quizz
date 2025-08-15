@@ -22,7 +22,7 @@ interface QuizStore {
   setGender: (gender: string) => void;
   // getters(helpers)
   getSteps: () => QuizStepUnion[]
-  getCurrentStep: () => QuizStepUnion | null; // check this type
+  getCurrentStep: () => QuizStepUnion | null;
   getTotalSteps: () => number;
 }
 
@@ -58,11 +58,11 @@ export const useQuizStore = create<QuizStore>((set, get) => ({
   goToNextStep: () => set(() => {
     const { currentStepIndex, isEdit, getTotalSteps } = get();
     const totalSteps = getTotalSteps();
-    const nextIndex = !isEdit ? currentStepIndex + 1 : totalSteps + 1; // (totalSteps + 1) = finish quiz
+    const currentIndex = !isEdit ? currentStepIndex + 1 : totalSteps + 1; // (totalSteps + 1) = finish quiz
 
     return {
-      currentStepIndex: nextIndex,
-      quizFinished: nextIndex > totalSteps,
+      currentStepIndex: currentIndex,
+      quizFinished: currentIndex >= totalSteps,
       isEdit: isEdit,
     };
   }),
@@ -71,15 +71,11 @@ export const useQuizStore = create<QuizStore>((set, get) => ({
   })),
   // getters(helpers)
   getSteps: () => {
-    const { steps, selectedGender } = get();
+    const { steps } = get();
     const quizSteps: QuizStepUnion[] = [
       ...steps.mainSteps,
-      steps.genderStep,
+      ...steps.genderBasedSteps
     ];
-
-    if (selectedGender) {
-      quizSteps.push(...steps.genderBasedSteps);
-    }
 
     return quizSteps;
   },
@@ -90,10 +86,7 @@ export const useQuizStore = create<QuizStore>((set, get) => ({
     return quizSteps[currentStepIndex] ?? null;
   },
   getTotalSteps: () => {
-    const { steps } = get();
-    const genderSteps = steps.genderBasedSteps.length;
-    const mainSteps = steps.mainSteps.length;
-
-    return mainSteps + genderSteps;
+    const { getSteps } = get();
+    return getSteps().length;
   },
 }))
