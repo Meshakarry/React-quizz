@@ -10,7 +10,7 @@ export default function QuizButton ({ text, disabled = false, stepProgress, next
     <button
       className={
         `
-          fixed left-1/2 -translate-x-1/2 container bottom-0 z-10 rounded-t-[20px] text-center w-full flex px-9 py-5 items-center font-ubuntu text-base text-white leading-normal
+          fixed left-1/2 -translate-x-1/2 container bottom-0 z-20 rounded-t-[20px] text-center w-full flex px-9 py-5 items-center font-ubuntu text-base text-white leading-normal
           bg-[var(--current-step-color,#000)]
           disabled:cursor-not-allowed disabled:bg-[linear-gradient(0deg,rgba(0,0,0,0.5),rgba(0,0,0,0.5))]
         `

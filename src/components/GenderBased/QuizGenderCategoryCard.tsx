@@ -17,7 +17,7 @@ export default function QuizGenderCatgoryCard ({ category } : QuizGenderCatgoryC
       <div className="font-medium flex justify-between">
         <div className="flex flex-col gap-2">
           <span className="text-xl leading-none font-normal">{category.title}</span>
-          {category.brand && <span className="text-xs font-light leading-none">{category.brand}</span>}
+          {category.description && <span className="text-xs font-light leading-none">{category.description}</span>}
         </div>
 
         <h3 className="text-xl leading-none text-[#143656]">{formatPrice(category.price)}</h3>

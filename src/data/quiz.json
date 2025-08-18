@@ -214,7 +214,43 @@
             "filename": "transport-luxury.jpeg"
           },
           "price": 600,
-          "title": "Luxury"
+          "title": "Luxury",
+          "description": "Ide avion",
+          "options": {
+            "tooltip": {
+              "exists": true,
+              "data": [
+                {
+                  "name": "%s Payment",
+                  "value": 38
+                },
+                {
+                  "name": "%s Maintenance",
+                  "value": 10
+                },
+                {
+                  "name": "%s Insurance",
+                  "value": 14
+                },
+                {
+                  "name": "%s CTP",
+                  "value": 14
+                },
+                {
+                  "name": "%s Registration",
+                  "value": 10
+                },
+                {
+                  "name": "Fuel",
+                  "value": 60
+                }
+              ]
+            },
+            "meta": {
+              "exists": true,
+              "items": ["90.869 km", "Sedan", "Automatic", "4cyl 2.0L Petrol"]
+            }
+          }
         },
         {
           "id": "public-transport",
@@ -223,7 +259,43 @@
             "filename": "transport-public.jpeg"
           },
           "price": 450,
-          "title": "Public transport"
+          "title": "Public transport",
+          "description": "Public transport",
+          "options": {
+            "tooltip": {
+              "exists": true,
+              "data": [
+                {
+                  "name": "%s Payment",
+                  "value": 70
+                },
+                {
+                  "name": "%s Maintenance",
+                  "value": 14
+                },
+                {
+                  "name": "%s Insurance",
+                  "value": 19
+                },
+                {
+                  "name": "%s CTP",
+                  "value": 14
+                },
+                {
+                  "name": "%s Registration",
+                  "value": 10
+                },
+                {
+                  "name": "Fuel",
+                  "value": 60
+                }
+              ]
+            },
+            "meta": {
+              "exists": true,
+              "items": ["43.738 km", "Sedan", "Automatic", "4cyl 2.0L Petrol"]
+            }
+          }
         },
         {
           "id": "cheap-transport",
@@ -232,7 +304,43 @@
             "filename": "transport-cheap.jpeg"
           },
           "price": 250,
-          "title": "Cheap transport"
+          "title": "Cheap transport",
+          "description": "Cheap",
+          "options": {
+            "tooltip": {
+              "exists": true,
+              "data": [
+                {
+                  "name": "%s Payment",
+                  "value": 70
+                },
+                {
+                  "name": "%s Maintenance",
+                  "value": 14
+                },
+                {
+                  "name": "%s Insurance",
+                  "value": 19
+                },
+                {
+                  "name": "%s CTP",
+                  "value": 14
+                },
+                {
+                  "name": "%s Registration",
+                  "value": 10
+                },
+                {
+                  "name": "Fuel",
+                  "value": 60
+                }
+              ]
+            },
+            "meta": {
+              "exists": true,
+              "items": ["43.738 km", "Sedan", "Automatic", "4cyl 2.0L Petrol"]
+            }
+          }
         }
       ]
     },
@@ -296,7 +404,7 @@
                     },
                     "price": 300,
                     "title": "Helanke za trening",
-                    "brand": "Nike"
+                    "description": "Nike"
                   },
                   {
                     "id": "sportwear-2",
@@ -306,7 +414,7 @@
                     },
                     "price": 200,
                     "title": "Lagana majica",
-                    "brand": "Nike"
+                    "description": "Nike"
                   },
                   {
                     "id": "sportwear-3",
@@ -316,7 +424,7 @@
                     },
                     "price": 89,
                     "title": "Patike za basket",
-                    "brand": "Nike"
+                    "description": "Nike"
                   },
                   {
                     "id": "sportwear-4",
@@ -326,7 +434,7 @@
                     },
                     "price": 200,
                     "title": "Jordan trenerka",
-                    "brand": "Nike"
+                    "description": "Nike"
                   }
                 ]
             },
@@ -340,7 +448,7 @@
                     },
                     "price": 880,
                     "title": "Kosuljica",
-                    "brand": "Nike"
+                    "description": "Nike"
                   },
                   {
                     "id": "formalwear-2",
@@ -350,7 +458,7 @@
                     },
                     "price": 550,
                     "title": "Dobre cehla",
-                    "brand": "Nike"
+                    "description": "Nike"
                   },
                   {
                     "id": "formalwear-3",
@@ -360,7 +468,7 @@
                     },
                     "price": 265,
                     "title": "Cipele",
-                    "brand": "Nike"
+                    "description": "Nike"
                   }
                 ]
             },
@@ -374,7 +482,7 @@
                     },
                     "price": 300,
                     "title": "Polo majica",
-                    "brand": "Samo brendirano"
+                    "description": "Samo brendirano"
                   },
                   {
                     "id": "casual-2",
@@ -384,7 +492,7 @@
                     },
                     "price": 44,
                     "title": "Carapcici na tufne",
-                    "brand": "Samo brendirano"
+                    "description": "Samo brendirano"
                   },
                   {
                     "id": "casual-3",
@@ -394,7 +502,7 @@
                     },
                     "price": 390,
                     "title": "Cipele i torba",
-                    "brand": "Samo brendirano"
+                    "description": "Samo brendirano"
                   }
                 ]
             }
@@ -413,7 +521,7 @@
                     },
                     "price": 300,
                     "title": "Helanke za trening",
-                    "brand": "Nike"
+                    "description": "Nike"
                   },
                   {
                     "id": "sportwear-2",
@@ -423,7 +531,7 @@
                     },
                     "price": 200,
                     "title": "Lagana majica",
-                    "brand": "Nike"
+                    "description": "Nike"
                   },
                   {
                     "id": "sportwear-3",
@@ -433,7 +541,7 @@
                     },
                     "price": 89,
                     "title": "Patike za basket",
-                    "brand": "Nike"
+                    "description": "Nike"
                   },
                   {
                     "id": "sportwear-4",
@@ -443,7 +551,7 @@
                     },
                     "price": 200,
                     "title": "Jordan trenerka",
-                    "brand": "Nike"
+                    "description": "Nike"
                   }
                 ]
             },
@@ -457,7 +565,7 @@
                     },
                     "price": 880,
                     "title": "",
-                    "brand": "Kosuljica"
+                    "description": "Kosuljica"
                   },
                   {
                     "id": "formalwear-2",
@@ -467,7 +575,7 @@
                     },
                     "price": 550,
                     "title": "Dobre cehla",
-                    "brand": "Nike"
+                    "description": "Nike"
                   },
                   {
                     "id": "formalwear-3",
@@ -477,7 +585,7 @@
                     },
                     "price": 265,
                     "title": "Cipele",
-                    "brand": "Nike"
+                    "description": "Nike"
                   }
                 ]
             },

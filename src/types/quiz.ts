@@ -1,16 +1,53 @@
 export type Gender = 'male' | 'female';
 
+export interface Thumbnail {
+  dir: string
+  filename: string
+}
+
+export interface Agent {
+  exists: boolean
+  name: string
+  avatar: Thumbnail
+}
+
+export interface Rating {
+  exists: boolean
+  value: number
+  review_amount: number
+}
+
+export interface TooltipData {
+  name: string
+  value: number
+}
+
+export interface Tooltip {
+  exists: boolean
+  data: TooltipData[]
+}
+
+export interface Meta {
+  exists: boolean
+  items: string[]
+}
+
+export interface ItemOptions {
+  price_per_week?: number
+  agent?: Agent
+  rating?: Rating
+  tooltip?: Tooltip
+  meta?: Meta
+}
+
 export interface QuizItem {
   id: string
-  thumbnail: {
-    dir: string,
-    filename: string
-  }
+  thumbnail: Thumbnail
   price: number
   title: string
   location?: string
-  brand?: string
-  options?: Record<string, any>
+  description?: string
+  options?: ItemOptions
 }
 
 export interface BaseStep {

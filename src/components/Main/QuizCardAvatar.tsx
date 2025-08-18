@@ -1,8 +1,7 @@
+import { Thumbnail } from 'types/quiz'
+
 interface QuizCardAvatarProps {
-  avatar: {
-    dir: string,
-    filename: string
-  }
+  avatar: Thumbnail
   agentName: string
 }
 

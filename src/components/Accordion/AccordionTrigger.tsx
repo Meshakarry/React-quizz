@@ -3,9 +3,11 @@ import DownArrow from 'components/Icons/DownArrow';
 
 interface AccordionTriggerProps {
   children: React.ReactNode
+  showArrow?: boolean
+  className?: React.HTMLProps<HTMLElement>["className"]
 }
 
-export default function AccordionTrigger ({ children }: AccordionTriggerProps) {
+export default function AccordionTrigger ({ children, showArrow = true, className }: AccordionTriggerProps) {
   const context = useAccordionContext();
   const item = useAccordionItemContext();
 
@@ -16,12 +18,12 @@ export default function AccordionTrigger ({ children }: AccordionTriggerProps) {
   return (
     <button 
       onClick={() => context?.handleTrigger(item?.id)}
-      className="w-full"
+      className={`w-full ${className ?? ''}`}
      >
         <div className="flex items-center justify-between gap-2">
           { children }
 
-          <DownArrow className={`w-4 h-2.5 ${item.id === context.activeContent ? 'rotate-180' : ''}`} />
+          { showArrow && <DownArrow className={`w-4 h-2.5 ${item.id === context.activeContent ? 'rotate-180' : ''}`} /> }
         </div>
     </button>
   )

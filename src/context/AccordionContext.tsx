@@ -11,6 +11,7 @@ interface AccordionItemContextProps {
 
 interface AccordionProviderProps {
   children: React.ReactNode
+  className?: React.HTMLProps<HTMLElement>["className"]
 }
 
 interface AccordionItemProviderProps {
